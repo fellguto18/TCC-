@@ -32,11 +32,9 @@ server.post('/admin/projeto', async (req, resp) => {
         if (!projetoParaInserir.descricao)
             throw new Error('descrição do projeto é obrigatório!');
 
-        if (projetoParaInserir.objetivo == undefined || projetoParaInserir < 0)
-            throw new Error('objetivo do projeto é obrigatório!');
-
-        if (!projetoParaInserir.imagem)
-            throw new Error('imagem do projeto é obrigatória!');
+        if (projetoParaInserir.meta == undefined || projetoParaInserir < 0)
+            throw new Error('meta do projeto é obrigatório!');
+            
         const projeto = await adicionarProjeto(projetoParaInserir);
         resp.send(projeto);
     } catch (err) {

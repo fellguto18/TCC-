@@ -4,3 +4,6 @@ select      id_admin 	   id,
         from tb_admin
         where ds_email 		            = 'fellguto@gmail.com'
         and ds_senha			        = '12345';
+
+insert into tb_projeto (nm_projeto, ds_projeto,vl_meta)
+                   values (?,?,?);

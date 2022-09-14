@@ -15,11 +15,11 @@ export async function login(email, senha){
 }
 
 //adicionar projeto
-export async function adicionarProjeto(consulta){
+export async function adicionarProjeto(projeto){
     const comando =
-    `insert into tb_projeto (nm_projeto, ds_descricao, ds_objetivo, img_projeto)
-                   values (?,?,?,?)`
-    const [resposta] = await con.query(comando, [projeto.nome, projeto.descricao, projeto.objetivo, projeto.imagem]);
+    `insert into tb_projeto (nm_projeto, ds_projeto,vl_meta)
+                   values (?,?,?)`
+    const [resposta] = await con.query(comando, [projeto.nome, projeto.descricao, projeto.meta]);
     projeto.id = resposta.insertId;
 
     return projeto;
