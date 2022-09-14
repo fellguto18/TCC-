@@ -1,5 +1,5 @@
 import { con } from './connection.js'
-
+//login admin
 export async function login(email, senha){
     const comando = 
             `select      id_admin 	   id,
@@ -13,3 +13,25 @@ export async function login(email, senha){
     const linhas = resp[0];
     return linhas[0];
 }
+
+//adicionar projeto
+export async function adicionarProjeto(consulta){
+    const comando =
+    `insert into tb_projeto (nm_projeto, ds_descricao, ds_objetivo, img_projeto)
+                   values (?,?,?,?)`
+    const [resposta] = await con.query(comando, [projeto.nome, projeto.descricao, projeto.objetivo, projeto.imagem]);
+    projeto.id = resposta.insertId;
+
+    return projeto;
+}
+
+// deletar projeto
+export async function removerProjeto(id){
+    const comando = 
+    ` delete from tb_projeto
+                 where id_projeto = ?`;
+    const [resposta] = await con.query(comando, [id]);
+    return resposta.affectedRows;
+}
+
+
