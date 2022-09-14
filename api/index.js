@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import adminController from '../controller/adminController.js'
+import adminController from './src/controller/adminController.js'
 
 import express from 'express'
 import cors from 'cors'

@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { login } from '../repository/adminRepository.js';
 const server = Router();
 
-server.post('/usuario/login', async (req, resp) => {
+server.post('/admin/login', async (req, resp) => {
     try{
         const {email, senha} = req.body;
         const resposta =  await login(email, senha);
