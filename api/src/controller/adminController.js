@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { login } from '../repository/UsuarioRepository.js';
+import { login } from '../repository/adminRepository.js';
 const server = Router();
 
 server.post('/usuario/login', async (req, resp) => {
