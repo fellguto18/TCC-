@@ -1,0 +1,97 @@
+
+
+.a{
+    height: 47em;
+}
+.logo{
+    width: 7em;
+    height: 5em;
+}
+
+.cadastrar-adm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 15px;
+  width: 30em;
+  height: 30em;
+ justify-content: center;
+
+
+}
+.bem-vindo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.informacoes{
+    width: 100px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+   
+    flex-direction: column;
+}
+
+.esqueceu-senha{
+    display: flex;
+    justify-content: end;
+}
+.bt-entrar{
+    width: 187px;
+    height: 66px;
+    left: 638px;
+    top: 534px;
+    
+    background: #4889EA;
+    border-radius: 40px;
+    border: none;
+}
+.botoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cadastre-se{
+    cursor: pointer;
+}
+.voltar{
+    cursor: pointer;
+}
+.esqueceu-senha{
+    color: #4889EA;
+}
+.cadastrar{
+    color: #4889EA;
+    font-size: 15px;
+}
+.voltar{
+    color: #4889EA;
+
+}
+.email{
+    padding-left: 25px;
+}
+
+p{
+    display: flex;
+    padding-left: 50px;
+}
+a{
+    cursor: pointer;
+}
+input{
+    width:300px;
+    border: none;
+    border-bottom: 1px solid #4889EA;
+
+}
