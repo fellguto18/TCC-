@@ -16,8 +16,9 @@ function CadastroAdm(){
                          <p>Senha</p>             
                          <input className='senha' type="text" />             
                     </div>    
-                    
+                    <br />
                     <div className='esqueceu-senha'><a>Esqueceu senha?</a> </div>
+                    <br />
                     <div className='botoes'>
                          <div>
                               <button className='bt-entrar'>Entrar</button>

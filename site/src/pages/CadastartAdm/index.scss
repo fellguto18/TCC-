@@ -20,7 +20,7 @@
   flex-direction: column;
   background-color: white;
   border-radius: 15px;
-  width: 30em;
+  width: 25em;
   height: 30em;
  justify-content: center;
 
@@ -69,6 +69,7 @@
 }
 .esqueceu-senha{
     color: #4889EA;
+    font-size: 15px;
 }
 .cadastrar{
     color: #4889EA;
@@ -81,10 +82,13 @@
 .email{
     padding-left: 25px;
 }
+.senha{
+    padding-left: 25px;
+}
 
 p{
     display: flex;
-    padding-left: 50px;
+    padding-left: 25px;
 }
 a{
     cursor: pointer;
@@ -93,5 +97,5 @@ input{
     width:300px;
     border: none;
     border-bottom: 1px solid #4889EA;
-
+    padding-left: 50px;
 }
