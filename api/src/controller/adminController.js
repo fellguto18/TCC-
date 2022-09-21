@@ -1,6 +1,9 @@
 import { Router } from 'express';
-import { login, adicionarProjeto, removerProjeto } from '../repository/adminRepository.js';
+import { login, adicionarProjeto, removerProjeto, alterarImagem } from '../repository/adminRepository.js';
 
+import multer from 'multer';
+
+const upload = multer({ dest: 'storage/imgProjetos' })
 const server = Router();
 
 server.post('/admin/login', async (req, resp) => {
@@ -61,3 +64,20 @@ server.delete('/admin/projeto/:id', async (req, resp) => {
     }
 })
 
+//alterar imagem do projeto
+server.put('/admin/projeto/:id/imagem', upload.single('imagem'), async (req, resp) => {
+    try {
+        const { id } = req.params;
+        const imagem = req.file.path;
+
+        const resposta = await alterarImagem(imagem, id);
+        if (resposta != 1)
+            throw new Error('A imagem não pode ser salva.');
+
+        resp.status(204).send();
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})

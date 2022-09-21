@@ -34,4 +34,13 @@ export async function removerProjeto(id){
     return resposta.affectedRows;
 }
 
-
+// alterar imagem do projeto
+export async function alterarImagem(imagem, id) {
+    const comando =
+        `update tb_projeto
+        set img_projeto  = ?
+        where id_projeto = ?; `;
+    
+    const [resposta] = await con.query(comando, [imagem, id]);
+    return resposta.affectedRows;
+}
