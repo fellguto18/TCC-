@@ -1,19 +1,22 @@
 body{
-  background-color: #000;
-}
+  background: linear-gradient(0deg, rgba(255,255,255,1) 15%, rgba(72,137,234,1) 70%) no-repeat;
+  }
 
 .component-adm{
     display: flex;
-    width: 1200px ;
-    height: 723px;
+    width: 90vw ;
+    height: 45vw;
     border-radius: 35px;
     background-image: linear-gradient(to left, #fff 0, #fff 85%, #5B9DFF 15%);
-    margin: auto auto;
+    margin: auto;
+    margin-top: 1.5em;
 
     .side-menu-links{
       display: flex;
+      float: inline-start;
+      font-family: 'kanit-regular';
       flex-direction: column;
-      align-items: center;
+      align-items:center;
       color: #fff;
     }
 

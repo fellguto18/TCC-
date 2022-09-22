@@ -9,7 +9,7 @@ import CriarConta from './pages/CriarConta';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CriarConta />
+    <MenuAdmin />
   </React.StrictMode>
 );
 
