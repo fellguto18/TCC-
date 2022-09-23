@@ -1,5 +1,5 @@
 import axios from  'axios'
-import{  useNavegate  }from 'react-router-dom'
+import{  useNavigate  }from 'react-router-dom'
 import { useState } from 'react'
 
 import './index.scss'
@@ -11,11 +11,11 @@ function CadastroAdm(){
      const[senha, setSenha] = useState('');
      const [erro, setErro] = useState('');
 
-     const navigate = useNavegate
+     const navigate = useNavigate();
      
      async function entrarClick(){
      try{
-          const r=await axios.post('http://localhost:5000/admin/login', {
+          const r = await axios.post('http://localhost:5000/admin/login', {
                email:email,
                senha:senha
           })
