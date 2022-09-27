@@ -39,7 +39,7 @@ function CadastroAdm(){
                <div className='login'>             
                     <h1 className='bem-vindo'>Seja bem-vindo!</h1> 
                     <div className='cx-login'>   
-                         <p>Email</p>             
+                         <p className='emai'>Email</p>             
                          <input className='tx-email' type="text" value={email} onChange={e => setEmail(e.target.value)} />             
                     <div/>
                     <div/> 
