@@ -49,6 +49,7 @@ function CadastroAdm(){
                     </div>   
                     <br />
                     <div className='esqueceu-senha'><a>Esqueceu senha?</a> </div>
+                    <div className='erro'>{erro}</div>
                     <br />
                     <div className='botoes'>
                          <div>
