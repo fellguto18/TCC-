@@ -1,0 +1,78 @@
+body{
+    background: linear-gradient(0deg, rgba(255,255,255,1) 15%, rgba(72,137,234,1) 70%) no-repeat;
+    }
+
+    *{
+       //border: 1px solid #00f74a;
+    }
+    p{
+        font-family: 'kanit-regular';
+    }
+  
+  .component-adm{
+      display: flex;
+      width: 90vw ;
+      height: 45vw;
+      border-radius: 35px;
+      background-image: linear-gradient(to left, #fff 0, #fff 85%, #5B9DFF 15%);
+      margin: auto;
+      margin-top: 1.5em;
+  
+      .side-menu-links{
+        display: flex;
+        float: inline-start;
+        flex-direction: column;
+        align-items:center;
+        color: #fff;
+        font-family: 'kanit-regular';
+      }
+      .menu{
+        color: #4889EA;
+        display: flex;
+        flex-direction: row;
+        margin-left: 5em;
+      }
+      .box-input{
+        margin-left: 5em;
+      }
+      .box-input p{
+        color: #4889EA;
+        font-family: 'kanit-regular';
+      }
+      .input{
+        width:300px;
+        border: none;
+        border-bottom: 1px solid #4889EA;
+        padding-left: 25px;
+        outline: none;
+      }
+      .box-img{
+        margin: 5em;
+        margin-right: 5em;
+        margin-bottom: 1em;
+        width: 16vw;
+        height: 16vw;
+        background-color: #d9d9d9;
+        border-radius: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      .button{
+      width: 15vh;
+      height: 5vh;
+      color: #fff;
+      background: #4889EA;
+      border-radius: 35px;
+      border: none;
+      margin-top: 35em;
+    
+  }
+   .button:hover{
+      transform: scale(1.01,1.01);
+      color:#5794f0
+  }
+      
+  
+  }
