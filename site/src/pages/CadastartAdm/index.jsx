@@ -23,14 +23,14 @@ function CadastroAdm(){
                setErro(r.data.erro);
           }
           else{
-               navigate('/admin/projeto')
+               navigate('/admin/menu')
           }
      }catch (err){
           if(err.response.status === 401){
                setErro(err.response.data.erro);
           }
      }
-}
+     }
         
      return(
      <div className='a' >
@@ -64,4 +64,5 @@ function CadastroAdm(){
      </div>  
 ) } 
 
-export default CadastroAdm;
+
+     export default CadastroAdm;
