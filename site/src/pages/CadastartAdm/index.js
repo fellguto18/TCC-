@@ -23,14 +23,14 @@ function CadastroAdm(){
                setErro(r.data.erro);
           }
           else{
-               navigate('/admin/projeto')
+               navigate('/admin/menu')
           }
      }catch (err){
           if(err.response.status === 401){
                setErro(err.response.data.erro);
           }
      }
-}
+     }
         
      return(
      <div className='a' >
@@ -39,7 +39,7 @@ function CadastroAdm(){
                <div className='login'>             
                     <h1 className='bem-vindo'>Seja bem-vindo!</h1> 
                     <div className='cx-login'>   
-                         <p>Email</p>             
+                         <p className='emai'>Email</p>             
                          <input className='tx-email' type="text" value={email} onChange={e => setEmail(e.target.value)} />             
                     <div/>
                     <div/> 
@@ -49,6 +49,7 @@ function CadastroAdm(){
                     </div>   
                     <br />
                     <div className='esqueceu-senha'><a>Esqueceu senha?</a> </div>
+                    <div className='erro'>{erro}</div>
                     <br />
                     <div className='botoes'>
                          <div>
@@ -64,4 +65,5 @@ function CadastroAdm(){
      </div>  
 ) } 
 
-export default CadastroAdm;
+
+     export default CadastroAdm;
