@@ -13,7 +13,7 @@ export async function cadastrarUsuario(usuario){
 
 // login usuario
 
-export async function loginUsuario(emial, senha){
+export async function loginUsuario(email, senha){
     const comando = 
         `select      id_usuario        id,
         ds_email                    email,
