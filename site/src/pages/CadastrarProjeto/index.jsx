@@ -1,6 +1,9 @@
 import storage from 'local-storage';
 import { useState } from "react";
+
+//estilos
 import './index.scss'
+import { toast } from 'react-toastify';
 
 import { cadastrarProjeto, enviarImagemProjeto } from "../../api/projetoApi";
 import { useNavigate } from 'react-router-dom';
@@ -19,22 +22,30 @@ export default function CadastrarProjeto(){
     const [nome, setNome] = useState('');
     const [descricao, setDescricao] = useState('');
     const [meta, setMeta] = useState('');
-    const [imagem, setImagem] = useState('');
+    const [imagem, setImagem] = useState();
 
     async function salvarClick(){
         try {
           const usuario = storage('usuario-logado').id;  
-          const r = await cadastrarProjeto(nome, descricao, meta, usuario);
+          const r = await cadastrarProjeto(nome, descricao, Number(meta), usuario);
 
-          alert('Projeto cadastrado com sucesso')
+          toast('🚀 Projeto cadastrado com sucesso')
         } catch (err) {
-            alert(err.message);
+          toast.error(err.response.data.erro);
         }
     }
 
     function sairClick(){
         storage.remove('usuario-logado');
         navigate('/admin/login');
+    }
+
+    function escolherImagem() {
+        document.getElementById('imagemCapa').click();
+    }
+
+    function mostrarImagem(){
+        return URL.createObjectURL(imagem);
     }
 
     return(
@@ -69,8 +80,14 @@ export default function CadastrarProjeto(){
                     </div>
                </div>
                <div>
-                    <div className="box-img">
-                        <img src="/assets/images/download.svg" alt="Logo de download" className="img-download" />
+                    <div className="box-img" onClick={escolherImagem}>
+                        {!imagem &&
+                            <img src="/assets/images/download.svg" alt="Logo de download" className="img-download" />
+                        }
+                        {imagem &&
+                            <img className='imagem-projeto' src={mostrarImagem()} alt="" />
+                        }
+                        <input type="file" id='imagemProjeto' onChange={e => setImagem(e.target.files[0])} />
                     </div>
                </div>
                <div className="box-button">

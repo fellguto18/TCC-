@@ -58,7 +58,16 @@ body{
         align-items: center;
         justify-content: center;
       }
-    
+      #imagemProjeto{
+        visibility: hidden;
+        position: absolute;
+      }
+      .imagem-projeto{
+        width: 16vw;
+        height: 16vw;
+        border-radius: 35px;
+      }
+
       .button{
       width: 15vh;
       height: 5vh;

@@ -29,15 +29,16 @@ export default server;
 server.post('/admin/projeto', async (req, resp) => {
     try {
         const projetoParaInserir = req.body;
+       
         if (!projetoParaInserir.nome)
             throw new Error('Nome do projeto é obrigatório!');
 
         if (!projetoParaInserir.descricao)
-            throw new Error('descrição do projeto é obrigatório!');
+            throw new Error('Descrição do projeto é obrigatória!');
 
-        if (projetoParaInserir.meta == undefined || projetoParaInserir < 0)
-            throw new Error('meta do projeto é obrigatório!');
-            
+        if (isNaN(projetoParaInserir.meta) || projetoParaInserir.meta == undefined || projetoParaInserir.meta <= 0)
+            throw new Error('A meta do projeto é obrigatória!');
+
         const projetoInserido = await adicionarProjeto(projetoParaInserir);
         resp.send(projetoInserido);
     } catch (err) {
