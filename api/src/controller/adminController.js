@@ -81,3 +81,27 @@ server.put('/admin/projeto/:id/imagem', upload.single('imagem'), async (req, res
         })
     }
 })
+
+//alterar projeto
+server.put('/admin/projeto/:id/alterarprojeto', async (req, resp) => {
+    try {
+        const { id } = req.params;
+        const projeto = req.body;
+
+      
+        if ( !projeto.nome )
+            throw new Error('O nome do projeto é obrigatório.');
+        if ( !projeto.meta )
+            throw new Error('A meta do projeto é obrigatória.');
+        if ( !projeto.descricao )
+            throw new Error('A descrição do projeto é obrigatória.');
+    
+            
+            
+        resp.status(204).send();
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})

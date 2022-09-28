@@ -45,3 +45,23 @@ export async function alterarImagem(imagem, id) {
     const [resposta] = await con.query(comando, [imagem, id]);
     return resposta.affectedRows;
 }
+
+//editar projeto
+
+export async function editarProjeto(id, projeto) {
+    const comando =
+        `update tb_projeto
+        set nm_projeto   = ?
+            vl_meta      = ?
+            ds_projeto   = ?
+        where id_projeto = ?; `;
+    
+    const [resposta] = await con.query(comando, [projeto.nome,projeto.meta,projeto.descricao,id]);
+    return resposta.affectedRows;
+}
+
+//consultar projetos
+
+//ver doadores
+
+//realizar doação
