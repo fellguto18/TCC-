@@ -3,8 +3,18 @@ import { useState } from "react";
 import './index.scss'
 
 import { cadastrarProjeto, enviarImagemProjeto } from "../../api/projetoApi";
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export default function CadastrarProjeto(){
+
+    useEffect(() => {
+        if(!storage('usuario-logado')){
+            navigate('/admin/login');
+        }
+    },[])    
+
+    const navigate = useNavigate();
 
     const [nome, setNome] = useState('');
     const [descricao, setDescricao] = useState('');
@@ -23,6 +33,11 @@ export default function CadastrarProjeto(){
         }
     }
 
+    function sairClick(){
+        storage.remove('usuario-logado');
+        navigate('/admin/login');
+    }
+
     return(
 
            <>
@@ -35,9 +50,10 @@ export default function CadastrarProjeto(){
                              <p>Projetos</p>
                              <p>Doadores</p>
                              <p>Estatísticas</p>
+                             <p onClick={sairClick}>Sair</p>
                        </div>
                </aside>
-               <div>
+               <div className='menuzao'>
                     <div className="menu"> <p> Projetos Criados |</p> <p> Criar Projeto</p></div>
 
                     <div className="box-input">
@@ -50,7 +66,7 @@ export default function CadastrarProjeto(){
                     </div>
                     <div className="box-input">
                         <p>Objetivos do projeto</p>
-                        <input type="text" className="input"  value={meta} onChange={e => setMeta(e.target.value)}/>
+                        <input type="number" className="input"  value={meta} onChange={e => setMeta(e.target.value)}/>
                     </div>
                </div>
                <div>

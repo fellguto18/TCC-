@@ -1,6 +1,9 @@
-import axios from  'axios'
+import { login } from '../../api/adminApi'
 import{  useNavigate  }from 'react-router-dom'
-import { useState } from 'react'
+
+import storage from 'local-storage'
+import LoadingBar from 'react-top-loading-bar'
+import { useState, useRef, useEffect} from 'react'
 
 import './index.scss'
 import logo from '../../assets/images/logo.png'
@@ -10,30 +13,45 @@ function CadastroAdm(){
      const[email, setEmail] = useState('');
      const[senha, setSenha] = useState('');
      const [erro, setErro] = useState('');
+     const [carregando, setCarregando] = useState(false);
 
      const navigate = useNavigate();
+     const ref = useRef();
+
+     useEffect(() => {
+          if(storage('usuario-logado')) {
+               navigate('/admin/menu');
+          }
+     }, [])
      
      async function entrarClick(){
-     try{
-          const r = await axios.post('http://localhost:5000/admin/login', {
-               email:email,
-               senha:senha
-          })
-          if (r.status === 401){
-               setErro(r.data.erro);
+          ref.current.continuousStart();
+          setCarregando(true);    
+
+          try {
+          const r = await login(email, senha);
+          storage('usuario-logado', r)
+         
+
+          setTimeout(() => {
+               navigate('/admin/menu');
+          }, 3000);
+
+
+          }catch (err){
+               ref.current.complete();
+               setCarregando(false);
+
+               if(err.response.status === 401){
+                    setErro(err.response.data.erro);
+               }
           }
-          else{
-               navigate('/admin/menu')
-          }
-     }catch (err){
-          if(err.response.status === 401){
-               setErro(err.response.data.erro);
-          }
-     }
      }
         
      return(
      <div className='a' >
+          <LoadingBar color='#000' ref={ref} />
+
           <img className='logo' src={logo} />
           <div className='cadastrar-adm' >                         
                <div className='login'>             
@@ -53,7 +71,7 @@ function CadastroAdm(){
                     <br />
                     <div className='botoes'>
                          <div>
-                              <button className='bt-entrar' onClick={entrarClick}> <a >Entrar</a> </button>
+                              <button className='bt-entrar' onClick={entrarClick} disabled={carregando}> <a >Entrar</a> </button>
                          </div>
                          <div>
                               <h2 className='cadastrar'>Não tem uma conta? <a className='cadastre-se' >Cadastre-se</a> </h2>

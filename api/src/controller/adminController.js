@@ -28,7 +28,7 @@ export default server;
 //cadastrar novo projeto
 server.post('/admin/projeto', async (req, resp) => {
     try {
-        const projetoParaInserir = req.body
+        const projetoParaInserir = req.body;
         if (!projetoParaInserir.nome)
             throw new Error('Nome do projeto é obrigatório!');
 
@@ -38,8 +38,8 @@ server.post('/admin/projeto', async (req, resp) => {
         if (projetoParaInserir.meta == undefined || projetoParaInserir < 0)
             throw new Error('meta do projeto é obrigatório!');
             
-        const projeto = await adicionarProjeto(projetoParaInserir);
-        resp.send(projeto);
+        const projetoInserido = await adicionarProjeto(projetoParaInserir);
+        resp.send(projetoInserido);
     } catch (err) {
         resp.status(400).send({
             erro: err.message

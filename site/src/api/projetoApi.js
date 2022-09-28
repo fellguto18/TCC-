@@ -3,12 +3,11 @@ const api = axios.create({
     baseURL: 'http://localhost:5000'
 })
 
-export async function cadastrarProjeto(nome, descricao, meta, usuario){
+export async function cadastrarProjeto(nome, descricao, meta){
     const resposta = await api.post('/admin/projeto', {
         nome : nome,
         descricao : descricao,
         meta: meta,
-        usuario : usuario
     })
     return resposta.data;
 }
