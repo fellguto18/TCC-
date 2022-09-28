@@ -9,8 +9,8 @@ export default function Rotas(){
 return(
         <BrowserRouter>
             <Routes>
-                <Route path="/admin/login" exact={true} element={<CadastroAdm/>}/>
-                <Route path="/admin/menu" exact={true} element={<CadastrarProjeto/>} />
+                <Route path="/admin/login"  element={<CadastroAdm/>}/>
+                <Route path="/admin/menu"  element={<CadastrarProjeto/>} />
             </Routes>
         </BrowserRouter>
 )

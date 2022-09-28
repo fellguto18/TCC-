@@ -19,7 +19,6 @@ export default function CadastrarProjeto(){
           alert('Projeto cadastrado com sucesso')
         } catch (err) {
             alert(err.message);
-            
         }
     }
 
