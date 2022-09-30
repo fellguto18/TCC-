@@ -159,9 +159,8 @@ server.get('/admin/doador/email?', async (req,resp) => {
     }
 })
 
-server.get('/admin/doador/cpf?', async (req,resp) => {
+server.get('/admin/doador/?', async (req,resp) => {
     try{
-
         const {cpf} = req.query;
         const resposta = await consultarDoadorNome(cpf);
         if(!resposta)
