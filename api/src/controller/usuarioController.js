@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { cadastrarUsuario, loginUsuario } from "../repository/usuarioRepository.js";
+import { cadastrarUsuario, loginUsuario, realizarDoacao } from "../repository/usuarioRepository.js";
 
 const server = Router();
 
@@ -29,6 +29,7 @@ server.post('/usuario/cadastro', async (req, resp) => {
     }
 })
 
+//login usuario
 server.post('/usuario/login', async (req,resp) => {
     try{
         const {email, senha} = req.body;
@@ -43,6 +44,29 @@ server.post('/usuario/login', async (req,resp) => {
     catch(err){
         resp.status(401).send({
             erro: err.message
+        })
+    }
+})
+
+//Fazer doação
+
+server.post('/usuario/doacao', async (req,resp) => {
+    try{
+        const {projeto, usuario, doacao } = req.body;
+        const resposta = await realizarDoacao(projeto, usuario, doacao);
+        
+        if(!usuario)
+            throw new Error('Faça seu Login!');
+        if(!projeto)
+            throw new Error('Selecione um Projeto!');
+        if(!doacao)
+            throw new Error('Selecione um valor a ser doado!');
+        
+        resp.status(204).send(resposta)
+    }
+    catch(err){
+        resp.status(400).send({
+            erro:err.message
         })
     }
 })

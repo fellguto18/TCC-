@@ -1,11 +1,12 @@
 import { Router } from 'express';
-import { login, adicionarProjeto, removerProjeto, alterarImagem } from '../repository/adminRepository.js';
+import { login, adicionarProjeto, removerProjeto, alterarImagem, consultarProjetos, consultarDoadorNome, consultarDoadorEmail, editarProjeto } from '../repository/adminRepository.js';
 
 import multer from 'multer';
 
 const upload = multer({ dest: 'storage/imgProjetos' })
 const server = Router();
 
+//adm login
 server.post('/admin/login', async (req, resp) => {
     try{
         const {email, senha} = req.body;
@@ -75,7 +76,7 @@ server.put('/admin/projeto/:id/imagem', upload.single('imagem'), async (req, res
         if (resposta != 1)
             throw new Error('A imagem não pode ser salva.');
 
-        resp.status(204).send();
+        resp.status(204).send(resposta);
     } catch (err) {
         resp.status(400).send({
             erro: err.message
@@ -84,25 +85,92 @@ server.put('/admin/projeto/:id/imagem', upload.single('imagem'), async (req, res
 })
 
 //alterar projeto
-server.put('/admin/projeto/:id/alterarprojeto', async (req, resp) => {
+server.put('/admin/projeto/:nome', async (req, resp) => {
     try {
-        const { id } = req.params;
+        const { nome } = req.params;
         const projeto = req.body;
-
+        const resposta = await editarProjeto(nome, projeto);
       
-        if ( !projeto.nome )
+        if ( !resposta.nome )
             throw new Error('O nome do projeto é obrigatório.');
-        if ( !projeto.meta )
+        if ( !resposta.meta )
             throw new Error('A meta do projeto é obrigatória.');
-        if ( !projeto.descricao )
+        if ( !resposta.descricao )
             throw new Error('A descrição do projeto é obrigatória.');
     
             
             
-        resp.status(204).send();
+        resp.status(204).send(resposta);
     } catch (err) {
         resp.status(400).send({
             erro: err.message
+        })
+    }
+})
+
+//selecionar projeto
+
+server.get('/admin/projeto?', async (req,resp) => {
+    try{
+
+        const {nome} = req.query;
+        const resposta = await consultarProjetos(nome);
+        if(!resposta)
+            throw new Error('Projeto não encontrado!');
+        resp.send(resposta);
+    }
+    catch(err){
+        resp.status(400).send({
+            erro:err.message
+        })
+    }
+})
+
+//consultar doador
+server.get('/admin/doador/nome?', async (req,resp) => {
+    try{
+
+        const {nome} = req.query;
+        const resposta = await consultarDoadorNome(nome);
+        if(!resposta)
+            throw new Error('Doador não encontrado!');
+        resp.send(resposta);
+    }
+    catch(err){
+        resp.status(400).send({
+            erro:err.message
+        })
+    }
+})
+
+server.get('/admin/doador/email?', async (req,resp) => {
+    try{
+
+        const {email} = req.query;
+        const resposta = await consultarDoadorEmail(email);
+        if(!resposta)
+            throw new Error('Doador não encontrado!');
+        resp.send(resposta);
+    }
+    catch(err){
+        resp.status(400).send({
+            erro:err.message
+        })
+    }
+})
+
+server.get('/admin/doador/cpf?', async (req,resp) => {
+    try{
+
+        const {cpf} = req.query;
+        const resposta = await consultarDoadorNome(cpf);
+        if(!resposta)
+            throw new Error('Doador não encontrado!');
+        resp.send(resposta);
+    }
+    catch(err){
+        resp.status(400).send({
+            erro:err.message
         })
     }
 })

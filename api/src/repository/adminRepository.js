@@ -41,7 +41,7 @@ export async function alterarImagem(imagem, id) {
     const comando =
         `update tb_projeto
         set img_projeto  = ?
-        where id_projeto = ?; `;
+        where id_projeto = ? `;
     
     const [resposta] = await con.query(comando, [imagem, id]);
     return resposta.affectedRows;
@@ -49,25 +49,71 @@ export async function alterarImagem(imagem, id) {
 
 //editar projeto
 
-export async function editarProjeto(id, projeto) {
+export async function editarProjeto(nome, projeto) {
     const comando =
         `update tb_projeto
-        set nm_projeto   = ?
-            vl_meta      = ?
+        set nm_projeto   = ?,
+            vl_meta      = ?,
             ds_projeto   = ?
-        where id_projeto = ?; `;
+        where nm_projeto like '% ${nome}%' `;
     
-    const [resposta] = await con.query(comando, [projeto.nome,projeto.meta,projeto.descricao,id]);
+    const [resposta] = await con.query(comando, [projeto.nome, projeto.meta, projeto.descricao, nome]);
     return resposta.affectedRows;
 }
 
 //consultar projetos
 
-export default function consultarProjetos(){
+export async function consultarProjetos(nome){
     const comando =
-    ``
+    `select id_projeto   id,
+            nm_projeto   nome,
+            vl_meta      meta,
+            ds_projeto   descrição,
+            img_projeto  imagem,
+            vl_obtido    obtido
+        from tb_projeto
+        where nm_projeto like '%${nome}%'`
+    const resposta = await con.query(comando, nome);
+    const linhas = resposta[0];
+    return linhas;
 }
 
 //ver doadores
 
-//realizar doação
+export async function consultarDoadorNome(nome){
+    const comando =
+    `select id_usuario  id,
+            nm_usuario  nome,
+            ds_email    email,
+            ds_cpf      cpf
+        from tb_usuario
+        where nm_usuario like '%${nome}%' `
+    const resposta = await con.query(comando, nome);
+    const linhas = resposta[0];
+    return linhas;
+}
+export async function consultarDoadorEmail(email){
+    const comando =
+    `select id_usuario  id,
+            nm_usuario  nome,
+            ds_email    email,
+            ds_cpf      cpf
+        from tb_usuario
+        where ds_email like '%${email}%' `
+    const resposta = await con.query(comando, email);
+    const linhas = resposta[0];
+    return linhas;
+}
+export async function consultarDoadorCpf(cpf){
+    const comando =
+    `select id_usuario  id,
+            nm_usuario  nome,
+            ds_email    email,
+            ds_cpf      cpf
+        from tb_usuario
+        where ds_cpf like '%${cpf}%' `
+    const resposta = await con.query(comando, cpf);
+    const linhas = resposta[0];
+    return linhas;
+}
+
