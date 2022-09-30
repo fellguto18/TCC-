@@ -32,8 +32,7 @@ export async function realizarDoacao(usuario, projeto, doacao){
     const comando = 
         `insert into tb_doacao(id_usuario, id_projeto, vl_doacao)
             values(?,?,?)`
-    const [resposta] = await con.query(comando, [usuario.id, projeto.id, doacao.valor])
-    doacao.id = resposta.insertId;
-
-    return doacao;
+    const [resposta] = await con.query(comando, [usuario, projeto, doacao])
+    let id = resposta.insertId;
+    return id;
 }

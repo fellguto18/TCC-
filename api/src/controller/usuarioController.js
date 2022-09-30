@@ -54,7 +54,7 @@ server.post('/usuario/doacao', async (req,resp) => {
     try{
         const {projeto, usuario, doacao } = req.body;
         const resposta = await realizarDoacao(projeto, usuario, doacao);
-        
+        console.log(resposta);
         if(!usuario)
             throw new Error('Faça seu Login!');
         if(!projeto)
@@ -62,10 +62,10 @@ server.post('/usuario/doacao', async (req,resp) => {
         if(!doacao)
             throw new Error('Selecione um valor a ser doado!');
         
-        resp.status(204).send(resposta)
+        resp.send({id:resposta})
     }
     catch(err){
-        resp.status(400).send({
+        resp.sendStatus(401).send({
             erro:err.message
         })
     }
