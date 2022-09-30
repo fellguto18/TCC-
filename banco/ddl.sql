@@ -31,5 +31,5 @@ id_usuario   int,
 id_projeto   int,
 vl_doacao    decimal(15.5),
 FOREIGN KEY (id_usuario) references tb_usuario (id_usuario),
-FOREIGN KEY (id_projeto) references tb_projeto (id_projeto);
+FOREIGN KEY (id_projeto) references tb_projeto (id_projeto)
 );
