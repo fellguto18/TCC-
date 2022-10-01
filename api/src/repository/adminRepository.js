@@ -78,6 +78,20 @@ export async function consultarProjetos(nome){
     return linhas;
 }
 
+//ver todos doadores
+
+export async function listarTodosDoadores(){
+    const comando =
+    `select id_usuario   id,
+            nm_usuario   nome,
+            ds_email     email,
+            ds_cpf       cpf
+        from tb_usuario`
+    const resposta = await con.query(comando);
+    const linhas = resposta[0]
+    return linhas[0];
+}
+
 //ver doadores
 
 export async function consultarDoadorNome(nome){

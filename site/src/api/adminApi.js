@@ -12,3 +12,8 @@ export async function login(email, senha) {
 
     return r.data;
 }
+
+export async function listarTodosDoadores(){
+    const resposta = await api.get('/admin/doadores')
+    return resposta.data
+}
