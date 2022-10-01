@@ -55,7 +55,7 @@ export async function editarProjeto(nome, projeto) {
         set nm_projeto   = ?,
             vl_meta      = ?,
             ds_projeto   = ?
-        where nm_projeto like '% ${nome}%' `;
+        where nm_projeto like '${nome}' `;
     
     const [resposta] = await con.query(comando, [projeto.nome, projeto.meta, projeto.descricao, nome]);
     return resposta.affectedRows;
