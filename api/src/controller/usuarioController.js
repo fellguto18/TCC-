@@ -54,7 +54,6 @@ server.post('/usuario/doacao', async (req,resp) => {
     try{
         const {projeto, usuario, doacao } = req.body;
         const resposta = await realizarDoacao(projeto, usuario, doacao);
-        console.log(resposta);
         if(!usuario)
             throw new Error('Faça seu Login!');
         if(!projeto)

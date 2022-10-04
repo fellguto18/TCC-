@@ -30,9 +30,9 @@ export async function loginUsuario(email, senha){
 //Fazer doação
 export async function realizarDoacao(usuario, projeto, doacao){
     const comando = 
-        `insert into tb_doacao(id_usuario, id_projeto, vl_doacao)
-            values(?,?,?)`
-    const [resposta] = await con.query(comando, [usuario, projeto, doacao])
+        `insert into tb_doacao(id_usuario, id_projeto, vl_doacao, dt_doacao)
+            values(?,?,?,?)`
+    const [resposta] = await con.query(comando, [usuario, projeto, doacao, doacao.data])
     let id = resposta.insertId;
     return id;
 }

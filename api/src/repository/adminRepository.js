@@ -82,51 +82,31 @@ export async function consultarProjetos(nome){
 
 export async function listarTodosDoadores(){
     const comando =
-    `select id_usuario   id,
-            nm_usuario   nome,
-            ds_email     email,
-            ds_cpf       cpf
-        from tb_usuario`
+    `select nm_projeto as projeto,
+            nm_usuario as doador,
+            vl_doacao  as valor,
+            dt_doacao  as data
+        from tb_doacao
+        inner join tb_usuario
+        on tb_doacao.id_usuario = tb_usuario.id_usuario
+        inner join tb_projeto
+        on tb_projeto.id_projeto = tb_doacao.id_projeto;`
     const resposta = await con.query(comando);
     return resposta[0];
 }
 
 //ver doadores
 
-export async function consultarDoadorNome(nome){
+export async function consultarDoador(filtro){
+    
     const comando =
     `select id_usuario  id,
             nm_usuario  nome,
             ds_email    email,
             ds_cpf      cpf
         from tb_usuario
-        where nm_usuario like '%${nome}%' `
-    const resposta = await con.query(comando, nome);
+        where nm_usuario like '%${filtro}%' or ds_email like '%${filtro}%' or ds_cpf like '%${filtro}%'`
+    const resposta = await con.query(comando, filtro);
     const linhas = resposta[0];
     return linhas;
 }
-export async function consultarDoadorEmail(email){
-    const comando =
-    `select id_usuario  id,
-            nm_usuario  nome,
-            ds_email    email,
-            ds_cpf      cpf
-        from tb_usuario
-        where ds_email like '%${email}%' `
-    const resposta = await con.query(comando, email);
-    const linhas = resposta[0];
-    return linhas;
-}
-export async function consultarDoadorCpf(cpf){
-    const comando =
-    `select id_usuario  id,
-            nm_usuario  nome,
-            ds_email    email,
-            ds_cpf      cpf
-        from tb_usuario
-        where ds_cpf like '%${cpf}%' `
-    const resposta = await con.query(comando, cpf);
-    const linhas = resposta[0];
-    return linhas;
-}
-

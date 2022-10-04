@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { login, adicionarProjeto, removerProjeto, alterarImagem, consultarProjetos, consultarDoadorNome, consultarDoadorEmail, editarProjeto, listarTodosDoadores } from '../repository/adminRepository.js';
+import { login, adicionarProjeto, removerProjeto, alterarImagem, consultarProjetos, consultarDoador, editarProjeto, listarTodosDoadores } from '../repository/adminRepository.js';
 
 import multer from 'multer';
 
@@ -141,13 +141,13 @@ server.get('/admin/doadores', async (req, resp) => {
 })
 
 //consultar doador
-server.get('/admin/doador/nome?', async (req,resp) => {
+server.get('/admin/doador?', async (req,resp) => {
     try{
+        const { filtro } = req.query; 
+        const resposta = await consultarDoador(filtro);
         
-        const {nome} = req.query;
-        const resposta = await consultarDoadorNome(nome);
         if(!resposta)
-        throw new Error('Doador não encontrado!');
+            throw new Error('Doador não encontrado!');
         resp.send(resposta);
     }
     catch(err){
@@ -157,33 +157,3 @@ server.get('/admin/doador/nome?', async (req,resp) => {
     }
 })
 
-server.get('/admin/doador/email?', async (req,resp) => {
-    try{
-        
-        const {email} = req.query;
-        const resposta = await consultarDoadorEmail(email);
-        if(!resposta)
-        throw new Error('Doador não encontrado!');
-        resp.send(resposta);
-    }
-    catch(err){
-        resp.status(400).send({
-            erro:err.message
-        })
-    }
-})
-
-server.get('/admin/doador/cpf?', async (req,resp) => {
-    try{
-        const {cpf} = req.query;
-        const resposta = await consultarDoadorNome(cpf);
-        if(!resposta)
-        throw new Error('Doador não encontrado!');
-        resp.send(resposta);
-    }
-    catch(err){
-        resp.status(400).send({
-            erro:err.message
-        })
-    }
-})

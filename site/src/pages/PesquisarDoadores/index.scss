@@ -1,3 +1,20 @@
 .page{
-    
+    .side-menu{
+        display: flex;
+        width: 90vw ;
+        height: 45vw;
+        border-radius: 35px;
+        background-image: linear-gradient(to left, #fff 0, #fff 85%, #5B9DFF 15%);
+        margin: auto;
+        margin-top: 1.5em;
+    }
+
+    .side-menu-links{
+      display: flex;
+      float: inline-start;
+      flex-direction: column;
+      align-items:center;
+      color: #fff;
+      font-family: 'kanit-regular';
+    }
 }
