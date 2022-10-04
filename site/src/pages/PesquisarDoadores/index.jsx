@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { listarTodosDoadores, listarDoadorNome, listarDoadorCpf,listarDoadorEmail } from "../../api/adminApi.js";
+import { listarTodosDoadores, pesquisarDoador } from "../../api/adminApi.js";
 import MenuAdmin from "../../components/menuAdmin/index.jsx";
 
 import './index.scss'
@@ -10,6 +10,14 @@ import lupa from "../../assets/images/lupa_1.png";
 
 export default function Index(){
     const [doador, setDoador] = useState([]);
+    const [filtro, setFiltro] = useState('');
+
+    async function filtrar(){
+        const resp = await pesquisarDoador(filtro);
+        setFiltro(resp);
+    }
+
+
 
     async function carregarTodosDoadores(){
         const resp = await listarTodosDoadores();
@@ -23,13 +31,28 @@ export default function Index(){
 
     return (
         <div className="page">
-            <MenuAdmin/>
-            <img className="lupa" src={lupa} />
+            <aside className="side-menu">
+                <div>
+                    <img src="/assets/images/logo.svg" alt="Logo do site" className='logo' />
+                </div>
+                <div className='side-menu-links'>
+                    <p>Projetos</p>
+                    <p>Doadores</p>
+                    <p>Estatísticas</p>
+                    <p>Sair</p>
+                </div>
+            </aside>
             <div>
-                <p className="Nome"> Fellipe </p>
-                <p className="info_doador">Projeto cadeira de Rodas | R$50,00 | 3/10/2022</p>
+                <input type="text" placeholder="Buscar Doador" valaue={filtro} onChange={e => setFiltro(e.target.value)}/>
+                <img className="lupa" src={lupa} onClick={filtrar}/>
             </div>
-
+        
+        {doador.map(item =>     
+        <div>
+            <p className="Nome">{item.nome}</p>
+            <p className="info_doador">{item.projeto} | {item.valor} | {item.data}</p>    
+        </div>   
+        )} 
         </div>
     )
 }
