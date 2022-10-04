@@ -1,53 +1,86 @@
-.page{
-    width: 1462px ; 
-    height: 737px;
-    background-image: url("../../assets/images/fundo.png") ;
+*{
+ border: #ea6848 solid 2px; 
+}
 
-    .logo{
-        width: 7em;
-        height: 5em;
-    }
+body{
+   background-color: 4889EA;
+}
 
-    .informacoes{
-        
-        
-        border-radius: 20px;
-        width: 500px;
-    }
-    .aaaa{
-        display:flex;
-        flex-direction: row;
-        width: 800px;
-        background-color: white;
-        border-radius: 20px;
-    }
 
-    h1{
-        color: #4889EA;
-    }
-    p{
-        color: #4889EA;
-    }
+.b{
+    display: flex;
+    justify-content: center;
+}
 
-    input{
-        width:300px;
-        border: none;
-        border-bottom: 1px solid #4889EA;
-        padding-left: 25px;
-        outline: none;
-    }
-    .botaoCadastar{
-        border-radius: 20px;
-        transform: scale(1.01,1.01);
-        background-color: #4889EA;
-        border-top: 2px;
-    }
-    .voltar{
-        display: flex;
-        flex-direction: row;
-    }
-    .a{
-        width: 20px;
-        height: 40px;
-    }
+.logo{
+    width: 7em;
+    height: 5em;
+    display: flex;
+    justify-self: start;
+}
+
+.informacoes{
+    
+    
+    border-radius: 20px;
+    width: 500px;
+}
+.aaaa{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 800px;
+    border-radius: 20px;
+    background-color: white;
+
+}
+
+h1{
+    color: #4889EA;
+}
+p{
+    color: #4889EA;
+}
+
+input{
+    width:300px;
+    border: none;
+    border-bottom: 1px solid #4889EA;
+    padding-left: 25px;
+    outline: none;
+}
+.botaoCadastar{
+    border-radius: 20px;
+    transform: scale(1.01,1.01);
+    background-color: #4889EA;
+    border-top: 2px;
+}
+.voltar{
+    display: flex;
+    flex-direction: row;
+}
+.a{
+    width: 20px;
+    height: 40px;
+}
+
+
+a{
+    cursor: pointer;
+}
+
+.utton{
+    background-color: rgb(255, 255, 255);
+    font-size: xx-large;
+    border: none;
+    cursor: pointer;
+    color: #4889EA;
+}
+
+.tton{
+    background-color: rgb(255, 255, 255);
+    font-size: small;
+    border: none;
+    cursor: pointer;
+    color: #4889EA;
 }
