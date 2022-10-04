@@ -88,8 +88,7 @@ export async function listarTodosDoadores(){
             ds_cpf       cpf
         from tb_usuario`
     const resposta = await con.query(comando);
-    const linhas = resposta[0]
-    return linhas[0];
+    return resposta[0];
 }
 
 //ver doadores
