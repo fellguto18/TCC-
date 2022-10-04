@@ -1,17 +1,22 @@
 *{
-    border: 1px solid #ea4848;
+ border: #ea6848 solid 2px; 
 }
-.page{
+
+body{
+   background-color: 4889EA;
+}
+
+
+.b{
     display: flex;
-    flex-direction: row;
-    background-image: url("../../assets/images/fundo.png") ;
     justify-content: center;
 }
 
 .logo{
     width: 7em;
     height: 5em;
-    
+    display: flex;
+    justify-self: start;
 }
 
 .informacoes{
@@ -57,4 +62,25 @@ input{
 .a{
     width: 20px;
     height: 40px;
+}
+
+
+a{
+    cursor: pointer;
+}
+
+.utton{
+    background-color: rgb(255, 255, 255);
+    font-size: xx-large;
+    border: none;
+    cursor: pointer;
+    color: #4889EA;
+}
+
+.tton{
+    background-color: rgb(255, 255, 255);
+    font-size: small;
+    border: none;
+    cursor: pointer;
+    color: #4889EA;
 }
