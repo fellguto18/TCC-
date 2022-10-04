@@ -1,53 +1,60 @@
+*{
+    border: 1px solid #ea4848;
+}
 .page{
-    width: 1462px ; 
-    height: 737px;
+    display: flex;
+    flex-direction: row;
     background-image: url("../../assets/images/fundo.png") ;
+    justify-content: center;
+}
 
-    .logo{
-        width: 7em;
-        height: 5em;
-    }
+.logo{
+    width: 7em;
+    height: 5em;
+    
+}
 
-    .informacoes{
-        
-        
-        border-radius: 20px;
-        width: 500px;
-    }
-    .aaaa{
-        display:flex;
-        flex-direction: row;
-        width: 800px;
-        background-color: white;
-        border-radius: 20px;
-    }
+.informacoes{
+    
+    
+    border-radius: 20px;
+    width: 500px;
+}
+.aaaa{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 800px;
+    border-radius: 20px;
+    background-color: white;
 
-    h1{
-        color: #4889EA;
-    }
-    p{
-        color: #4889EA;
-    }
+}
 
-    input{
-        width:300px;
-        border: none;
-        border-bottom: 1px solid #4889EA;
-        padding-left: 25px;
-        outline: none;
-    }
-    .botaoCadastar{
-        border-radius: 20px;
-        transform: scale(1.01,1.01);
-        background-color: #4889EA;
-        border-top: 2px;
-    }
-    .voltar{
-        display: flex;
-        flex-direction: row;
-    }
-    .a{
-        width: 20px;
-        height: 40px;
-    }
+h1{
+    color: #4889EA;
+}
+p{
+    color: #4889EA;
+}
+
+input{
+    width:300px;
+    border: none;
+    border-bottom: 1px solid #4889EA;
+    padding-left: 25px;
+    outline: none;
+}
+.botaoCadastar{
+    border-radius: 20px;
+    transform: scale(1.01,1.01);
+    background-color: #4889EA;
+    border-top: 2px;
+}
+.voltar{
+    display: flex;
+    flex-direction: row;
+}
+.a{
+    width: 20px;
+    height: 40px;
 }
