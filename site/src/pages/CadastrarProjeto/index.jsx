@@ -29,7 +29,7 @@ export default function CadastrarProjeto(){
           const usuario = storage('usuario-logado').id;  
           const r = await cadastrarProjeto(nome, descricao, Number(meta), usuario);
 
-          toast('🚀 Projeto cadastrado com sucesso')
+          toast('🚀 Projeto cadastrado com sucesso!')
         } catch (err) {
           toast.error(err.response.data.erro);
         }
