@@ -1,28 +1,64 @@
 import './index.scss'
 import logo from '../../assets/images/logo.png'
 import ftcriarconta from '../../assets/images/ftcriarconta.png'
+import {  useState  } from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import storage from 'local-storage';
+import { useEffect } from 'react';
+import { useRef } from 'react';
+import { toast } from 'react-toastify';
+import { criarConta } from '../../api/usuarioApi';
 
-
+import { cadastrarUsuario } from "../../api/projetoApi";
 
 export default function CriarConta(){
+    const[nome,setNome] = useState('');
+    const[cpf,setCpf] = useState('');   
+    const[email, setEmail] = useState('');
+     const[senha, setSenha] = useState('');
+     const[confirmar, setConfirmar] = useState('');
+     const [erro, setErro] = useState('');
+     const [carregando, setCarregando] = useState(false);
+
+     const navigate = useNavigate();
+     const ref = useRef();
+
+     async function entrarClick(){
+        try {
+          const confirmar = storage('usuario-cadastrar');  
+          const r = await criarConta(nome,cpf,email,senha,confirmar);
+
+          toast('🚀 Projeto cadastrado com sucesso!')
+        } catch (err) {
+          toast.error(err.response.data.erro);
+        }
+    }
+
+    function voltarClick(){
+        storage.remove('usuario-logado');
+        navigate('/admin/login');
+    }
+     
+     
     return(
         <div className=''>
                 <div className='logo'> <img src={logo} /></div>
             <div className='b'>
                 <div className='aaaa'>
                     <div className='informacoes'>
-                        <button className='utton'>Voltar</button>
+                        <button className='utton' onClick={voltarClick}>Voltar</button>
                         <p>Nome Completo</p>
-                        <input type="text" />
-                        <p>CPF</p>
-                        <input type="text" />
-                        <p>E-mail</p>
-                        <input type="text" />
-                        <p>Senha</p>
-                        <input type="text" />
-                        <p>Confirme sua senha</p>
-                        <input type="text" />
-                        <button className='tton'>Cadastrar</button>
+                         <input type="text"className='' value={nome} onChange={e => setNome(e.target.value)} /> 
+                         <p>CPF</p>
+                         <input type="text" className='' value={cpf} onChange={e => setCpf(e.target.value)}/>
+                         <p>E-mail</p>
+                         <input type="text" className='' value={email} onChange={e => setEmail(e.target.value)} />
+                         <p>Senha</p>
+                         <input type="text" className='' value={senha} onChange={e => setSenha(e.target.value)}/>
+                         <p>Confirme sua senha</p>
+                         <input type="text" className='' value={confirmar} onChange={e => setConfirmar(e.target.value)}/>
+                         <button className='botaoCadastar' onClick={entrarClick}  >  Cadastrar</button>
                     </div>
                     <div className='inf-img'>
                             <img src={ftcriarconta} />

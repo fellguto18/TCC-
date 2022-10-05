@@ -12,3 +12,14 @@ export async function login(email, senha) {
 
     return r.data;
 }
+export async function cadastrarUsuario(nome,cpf,email,senha,confirmar){
+    const resposta= await api.post('/usuario/cadastrar',{
+        nome:nome,
+        cpf:cpf,
+        email:email,
+        senha:senha,
+        confirmar:confirmar
+    });
+
+    return resposta.data;
+}
