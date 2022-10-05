@@ -8,9 +8,7 @@ import storage from 'local-storage';
 import { useEffect } from 'react';
 import { useRef } from 'react';
 import { toast } from 'react-toastify';
-import { criarConta } from '../../api/usuarioApi';
-
-import { cadastrarUsuario } from "../../api/projetoApi";
+import { cadastrarUsuario } from '../../api/usuarioApi';
 
 export default function CriarConta(){
     const[nome,setNome] = useState('');
@@ -27,7 +25,7 @@ export default function CriarConta(){
      async function entrarClick(){
         try {
           const confirmar = storage('usuario-cadastrar');  
-          const r = await criarConta(nome,cpf,email,senha,confirmar);
+          const r = await cadastrarUsuario(nome,cpf,email,senha,confirmar);
 
           toast('🚀 Projeto cadastrado com sucesso!')
         } catch (err) {

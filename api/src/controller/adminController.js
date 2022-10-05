@@ -157,7 +157,7 @@ server.get('/admin/doadores', async (req, resp) => {
 })
 
 //consultar doador
-server.get('/admin/doador?', async (req,resp) => {
+server.get('/admin/doador?data', async (req,resp) => {
     try{
         const { filtro } = req.query; 
         const resposta = await consultarDoador(filtro);
