@@ -9,15 +9,15 @@ import LoginUsuario from '../pages/LoginUsuario';
 
 export default function Rotas(){
 return(
-        <BrowserRouter>
-            <Routes>
-                <Route path='/' element = {<LandingPage />} />
-                <Route path="/admin/login"  element={<CadastroAdm/>}/>
-                <Route path="/admin/menu"  element={<CadastrarProjeto/>} />
-                <Route path="/admin/doadores" element={<PesquisarDoadores/>}/>
-                <Route path="/usuario/cadastrar"  element={<CriarConta/>} />
-                <Route path="/usuario/login" element={<LoginUsuario/>} />
-            </Routes>
-        </BrowserRouter>
+    <BrowserRouter>
+        <Routes>
+            <Route path='/' element = {<LandingPage />} />
+            <Route path="/admin/login"  element={<CadastroAdm/>}/>
+            <Route path="/admin/menu"  element={<CadastrarProjeto/>} />
+            <Route path="/admin/doadores" element={<PesquisarDoadores/>}/>
+            <Route path="/usuario/cadastrar"  element={<CriarConta/>} />
+            <Route path="/usuario/login" element={<LoginUsuario/>} />
+        </Routes>
+    </BrowserRouter>
 )
 }

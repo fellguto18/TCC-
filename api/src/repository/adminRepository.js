@@ -1,5 +1,18 @@
 import { con } from './connection.js'
 
+//consultar todos projetos
+
+export async function listarTodosProjetos(){
+    const comando = 
+    `select id_projeto   id,
+            nm_projeto   nome,
+            ds_projeto   descricao,
+            vl_meta      meta
+        from tb_projeto`
+    const resp = await con.query(comando);
+    return resp[0]
+}
+
 //login admin
 export async function login(email, senha){
     const comando = 
@@ -95,8 +108,8 @@ export async function listarTodosDoadores(){
     return resposta[0];
 }
 
-//ver doadores
 
+//ver doadores
 export async function consultarDoador(filtro){
     
     const comando =
