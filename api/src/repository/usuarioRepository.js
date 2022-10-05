@@ -3,9 +3,9 @@ import { con } from './connection.js';
 
 export async function cadastrarUsuario(usuario){
     const comando = 
-        `insert into tb_usuario (nm_usuario, ds_email, ds_senha, ds_cpf)
-            values (?, ?, ?, ?)`
-    const [resposta] = await con.query(comando, [usuario.nome, usuario.email, usuario.senha, usuario.cpf]);
+        `insert into tb_usuario (nm_usuario,ds_cpf, ds_email, ds_senha,ds_confirmar )
+            values (?, ?, ?, ?, ? )`
+    const [resposta] = await con.query(comando, [usuario.nome, usuario.cpf,usuario.email, usuario.senha,usuario.confirmar ]);
     usuario.id = resposta.insertId;
 
     return usuario;

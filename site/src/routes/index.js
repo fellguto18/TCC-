@@ -5,6 +5,7 @@ import CriarConta from '../pages/CriarConta';
 import PesquisarDoadores from '../pages/PesquisarDoadores';
 import LandingPage from '../pages/LandingPage';
 import LoginUsuario from '../pages/LoginUsuario';
+import CadastroOk from '../pages/CadastroRealizado';
 
 
 export default function Rotas(){
@@ -16,6 +17,7 @@ return(
             <Route path="/admin/menu"  element={<CadastrarProjeto/>} />
             <Route path="/admin/doadores" element={<PesquisarDoadores/>}/>
             <Route path="/usuario/cadastrar"  element={<CriarConta/>} />
+            <Route path='/cadastro/agradecimento' element={<CadastroOk/>}/>
             <Route path="/usuario/login" element={<LoginUsuario/>} />
         </Routes>
     </BrowserRouter>

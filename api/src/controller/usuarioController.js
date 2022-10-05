@@ -7,8 +7,12 @@ const server = Router();
 server.post('/usuario/cadastro', async (req, resp) => {
     try{
         const usuarioParaInserir = req.body;
+        console.log(usuarioParaInserir);
         if(!usuarioParaInserir.nome){
             throw new Error('Nome do usuário é obrigatório!');
+        }
+        if(!usuarioParaInserir.cpf){
+            throw new Error('CPF do usuário é obrigatório');
         }
         if(!usuarioParaInserir.email){
             throw new Error('Email do usuário é obrigatório!');
@@ -16,9 +20,10 @@ server.post('/usuario/cadastro', async (req, resp) => {
         if(!usuarioParaInserir.senha){
             throw new Error('Senha é obrigatória');
         }
-        if(!usuarioParaInserir.cpf){
-            throw new Error('CPF do usuário é obrigatório');
+        if(!usuarioParaInserir.confirmar){
+            throw new Error('Confirmar a senha é obrigatório!')
         }
+        
         const usuarioInserido = await cadastrarUsuario(usuarioParaInserir);
         resp.send(usuarioInserido);
     }

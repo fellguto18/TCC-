@@ -1,6 +1,7 @@
 import './index.scss'
 import logo from '../../assets/images/logo.png'
 import ftcriarconta from '../../assets/images/ftcriarconta.png'
+
 import {  useState  } from 'react'
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -8,9 +9,10 @@ import storage from 'local-storage';
 import { useEffect } from 'react';
 import { useRef } from 'react';
 import { toast } from 'react-toastify';
-import { criarConta } from '../../api/usuarioApi';
 
-import { cadastrarUsuario } from "../../api/projetoApi";
+import { cadastrarUsuario } from '../../api/usuarioApi';
+
+
 
 export default function CriarConta(){
     const[nome,setNome] = useState('');
@@ -26,10 +28,10 @@ export default function CriarConta(){
 
      async function entrarClick(){
         try {
-          const confirmar = storage('usuario-cadastrar');  
-          const r = await criarConta(nome,cpf,email,senha,confirmar);
+          const userLogged = storage('usuario-cadastrar');  
+          const r = await cadastrarUsuario(nome,cpf,email,senha,confirmar);
 
-          toast('🚀 Projeto cadastrado com sucesso!')
+          toast('🚀  cadastrado com sucesso!')
         } catch (err) {
           toast.error(err.response.data.erro);
         }
@@ -42,7 +44,7 @@ export default function CriarConta(){
      
      
     return(
-        <div className=''>
+        <div className='e'>
                 <div className='logo'> <img src={logo} /></div>
             <div className='b'>
                 <div className='aaaa'>

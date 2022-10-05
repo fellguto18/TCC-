@@ -20,9 +20,10 @@ vl_obtido    decimal(15.5)
 create table tb_usuario(
 id_usuario   int primary key auto_increment,
 nm_usuario   varchar(50),
+ds_cpf       varchar(15),
 ds_email     varchar(100),
 ds_senha     varchar(20),
-ds_cpf       varchar(15)
+ds_confirmar varchar(20)
 );
 
 create table tb_doacao(

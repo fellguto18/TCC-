@@ -1,0 +1,39 @@
+.page{
+    width: 1462px ; 
+    height: 737px;
+    background-image: url("../../assets/images/fundo.png") ;
+    display: flex;
+    justify-content: center; 
+}
+.logo{
+    width: 7em;
+    height: 5em;
+    display: flex;
+    justify-self: start;
+}
+
+.centro{
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    width: 450px;
+    height: 250px;
+    border-radius: 20px;
+}
+
+h1{
+    color:black ;
+}
+h3{
+    color: black;
+}
+
+button{
+    background-color: rgb(255, 255, 255);
+    font-size: small;
+    border: none;
+    cursor: pointer;
+    color: #4889EA;  
+}

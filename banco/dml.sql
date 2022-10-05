@@ -11,3 +11,6 @@ insert into tb_projeto (nm_projeto, ds_projeto,vl_meta)
 update tb_projeto
     set img_projeto = 'cadeira-de-rodas (1) 1.png'
     where id_projeto = 1;
+    
+ alter table tb_usuario add ds_confirmar varchar(20) after ds_senha;   
+    

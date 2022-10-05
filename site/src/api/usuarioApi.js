@@ -13,7 +13,7 @@ export async function login(email, senha) {
     return r.data;
 }
 export async function cadastrarUsuario(nome,cpf,email,senha,confirmar){
-    const resposta= await api.post('/usuario/cadastrar',{
+    const resposta= await api.post('/usuario/cadastro',{
         nome:nome,
         cpf:cpf,
         email:email,
