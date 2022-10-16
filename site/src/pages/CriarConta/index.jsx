@@ -30,16 +30,20 @@ export default function CriarConta(){
         try {
           const userLogged = storage('usuario-cadastrar');  
           const r = await cadastrarUsuario(nome,cpf,email,senha,confirmar);
-
+          function validarMesmaSenha(confsenha, senha) {
+            console.log("Valores: " + senha + " " + confsenha);
+            if (senha === confsenha) return { valido: true, texto: "" };
+            else return { valido: false, texto: "Senha não confere!" };
+          }
           toast('🚀  cadastrado com sucesso!')
         } catch (err) {
           toast.error(err.response.data.erro);
         }
     }
-
+    
     function voltarClick(){
         storage.remove('usuario-logado');
-        navigate('/admin/login');
+        navigate('/usuario/login');
     }
      
      

@@ -6,6 +6,9 @@ import PesquisarDoadores from '../pages/PesquisarDoadores';
 import LandingPage from '../pages/LandingPage';
 import LoginUsuario from '../pages/LoginUsuario';
 import CadastroOk from '../pages/CadastroRealizado';
+import EsqueceuSenha from '../pages/EsqueceuSenha';
+import NovaSenha from '../pages/NovaSenha';
+import AAA from '../pages/TesteQrCode';
 
 
 export default function Rotas(){
@@ -19,6 +22,9 @@ return(
             <Route path="/usuario/cadastrar"  element={<CriarConta/>} />
             <Route path='/cadastro/agradecimento' element={<CadastroOk/>}/>
             <Route path="/usuario/login" element={<LoginUsuario/>} />
+            <Route path='/esqueceu/senha' element={<EsqueceuSenha/>} />
+            <Route path='/nova/senha' element={<NovaSenha/>}/>
+            <Route texto="Chaves Gastas" path='/teste'  element={<AAA/>}/>
         </Routes>
     </BrowserRouter>
 )
