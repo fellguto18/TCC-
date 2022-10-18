@@ -43,7 +43,7 @@ export default function CriarConta(){
     
     function voltarClick(){
         storage.remove('usuario-logado');
-        navigate('/usuario/login');
+        navigate('/');
     }
      
      

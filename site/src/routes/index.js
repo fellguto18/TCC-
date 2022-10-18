@@ -9,6 +9,8 @@ import CadastroOk from '../pages/CadastroRealizado';
 import EsqueceuSenha from '../pages/EsqueceuSenha';
 import NovaSenha from '../pages/NovaSenha';
 import AAA from '../pages/TesteQrCode';
+import DoacaoRealizada from '../pages/ConfirmacaoDoacao';
+import Grafico from '../pages/Grafico';
 
 
 export default function Rotas(){
@@ -25,6 +27,8 @@ return(
             <Route path='/esqueceu/senha' element={<EsqueceuSenha/>} />
             <Route path='/nova/senha' element={<NovaSenha/>}/>
             <Route texto="Chaves Gastas" path='/teste'  element={<AAA/>}/>
+            <Route path='/doacao/realizada' element={<DoacaoRealizada/>}/>
+            <Route path='/grafico' element={<Grafico/>}/>
         </Routes>
     </BrowserRouter>
 )

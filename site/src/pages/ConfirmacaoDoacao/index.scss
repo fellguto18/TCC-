@@ -1,0 +1,34 @@
+.doacao{
+    display: flex;
+    justify-content: center;
+    width: 1290px;
+    height: 750px;
+}
+
+
+.ii{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    height: 600px;
+    margin-top: 60px;
+    align-items: center;
+    border-radius: 30px;
+}
+.img{
+    width: 200px;
+    height: 200px;
+}
+h1{
+    color: #4889EA;
+}
+h3{
+    color: #4889EA;
+}
+button{
+    color: white;
+    background-color: #4889EA;
+    border-radius: 30px;
+    
+}
