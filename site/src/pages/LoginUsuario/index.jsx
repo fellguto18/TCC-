@@ -1,5 +1,5 @@
 import { login } from '../../api/usuarioApi'
-import{  useNavigate  }from 'react-router-dom'
+import{  useNavigate,Link  }from 'react-router-dom'
 
 import storage from 'local-storage'
 import LoadingBar from 'react-top-loading-bar'
@@ -66,6 +66,7 @@ export default function LoginUsuario(){
                          
                     </div>   
                     <br />
+                    <div><Link to='/admin/login'>Sou adm</Link></div>
                     <div className='esqueceu-senha'><a>Esqueceu senha?</a> </div>
                     <div className='erro'>{erro}</div>
                     <br />

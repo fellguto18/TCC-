@@ -149,7 +149,7 @@ server.get('/admin/doadores', async (req, resp) => {
         const resposta = await listarTodosDoadores();
         resp.send(resposta);         
     }
-    catch{
+    catch(err){
         resp.status(400).send({
         erro:err.message
     })      

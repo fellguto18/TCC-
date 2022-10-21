@@ -1,5 +1,5 @@
 import { login } from '../../api/adminApi'
-import{  useNavigate  }from 'react-router-dom'
+import{  useNavigate, Link  }from 'react-router-dom'
 
 import storage from 'local-storage'
 import LoadingBar from 'react-top-loading-bar'
@@ -73,10 +73,9 @@ function CadastroAdm(){
                          <div>
                               <button className='bt-entrar' onClick={entrarClick} disabled={carregando}> <a >Entrar</a> </button>
                          </div>
-                         <div>
-                              <h2 className='cadastrar'>Não tem uma conta? <a className='cadastre-se' >Cadastre-se</a> </h2>
-                         </div>
-                         <a className='voltar'>Voltar</a>    
+
+
+                         <Link to ='/usuario/login' className='voltar'>Voltar</Link>    
                     </div>   
              </div>       
         </div>    

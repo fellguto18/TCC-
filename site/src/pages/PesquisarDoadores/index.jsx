@@ -41,7 +41,7 @@ export default function Index(){
                     <div>
                         <div className='buscar'>
                             <img className="lupa" src={lupa} alt='buscar' onClick={filtrar}/>
-                            <input type="text" placeholder="Buscar Doador" valaue={filtro} onChange={e => setFiltro(e.target.value)}/>
+                            <input className='input' type="text" placeholder="Buscar Doador" valaue={filtro} onChange={e => setFiltro(e.target.value)}/>
                         </div>
                     
                     <div>

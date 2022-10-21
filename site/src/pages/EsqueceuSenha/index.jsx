@@ -20,14 +20,14 @@ export default function EsqueceuSenha(){
     return(
         <div className='page'>
             <div className='logo'> <img src={logo} /></div>
-            <div>
+            <div className='aaa'>
                 <h1>Esqueci a senha</h1>
                 <p>Para redefinir sua senha, nos informe seu e-mail já cadastrado no site.</p>
 
                 <h4>Email</h4>
-                <input type="text" className='cx' />
+                <input className='texto' type="text"  />
 
-                <button>Próximo</button>
+                <button >Próximo</button>
                 <button className='utton' onClick={voltarClick}>Voltar</button>
 
             </div>

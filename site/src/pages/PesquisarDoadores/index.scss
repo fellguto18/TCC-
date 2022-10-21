@@ -1,12 +1,3 @@
-@font-face {
-  font-family: 'kanit-regular' ;
-  src: url(../../../public/assets/fonts/kanit/Kanit-Regular.ttf);
-}
-@font-face {
-  font-family: 'kanit-semibold';
-  src: url(../../../public/assets/fonts/kanit/Kanit-Medium.ttf);
-}
-
 .page{
     .side-menu{
         display: flex;
@@ -35,7 +26,7 @@
       cursor: pointer;
     }
 
-    input{
+    .input{
       border-radius: 60px;
       box-shadow: 5px 5px 5px rgb(168, 168, 168);
       margin-left: 0.5em;

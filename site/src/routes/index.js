@@ -9,13 +9,10 @@ import CadastroOk from '../pages/CadastroRealizado';
 import EsqueceuSenha from '../pages/EsqueceuSenha';
 import NovaSenha from '../pages/NovaSenha';
 import AAA from '../pages/TesteQrCode';
-<<<<<<< HEAD
 import SobreNos from '../pages/SobreNos';
-=======
 import DoacaoRealizada from '../pages/ConfirmacaoDoacao';
 import Grafico from '../pages/Grafico';
-
->>>>>>> 07eb620e10eb53e54a48cb7c2929d58354be28f2
+import SenhaAltSucesso from '../pages/SenhaSucesso';
 
 export default function Rotas(){
 return(
@@ -32,9 +29,12 @@ return(
             <Route path='/nova/senha' element={<NovaSenha/>}/>
             <Route path='/sobreNos' element={<SobreNos/>}/>
 
-            <Route texto="Chaves Gastas" path='/teste'  element={<AAA/>}/>
+            <Route path='/teste'  element={<AAA/>}/>
             <Route path='/doacao/realizada' element={<DoacaoRealizada/>}/>
             <Route path='/grafico' element={<Grafico/>}/>
+
+
+            <Route path='/senha/sucesso' element={<SenhaAltSucesso/>}/>
         </Routes>
     </BrowserRouter>
 )

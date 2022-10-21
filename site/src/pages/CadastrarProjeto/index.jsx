@@ -89,6 +89,7 @@ export default function CadastrarProjeto(){
                         }
                         <input type="file" id='imagemProjeto' onChange={e => setImagem(e.target.files[0])} />
                     </div>
+                    <h4 className='editar'>Editar projeto</h4>
                </div>
                <div className="box-button">
                 <button onClick={salvarClick} className="button">Publicar</button>
