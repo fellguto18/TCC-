@@ -1,0 +1,35 @@
+.pg_sobre{
+
+    .fx_branca{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        
+        background-color: #fff;
+        .fb_textos p, h1{
+            color: black;
+        }
+    }
+    .fx_azul{
+        display: flex;
+        flex-direction: row;
+        background-color: #4889ea;
+        .fa_textos p, h1{
+            color: white;
+        }
+    }
+
+    .img_questao1{
+        width: 20vh;
+        height: auto;
+        margin-top: 2em;
+    }
+
+    h1{
+        font-family: 'kanit-semibold';
+    }
+    p{
+        font-family: 'kanit-regular';
+    }
+}

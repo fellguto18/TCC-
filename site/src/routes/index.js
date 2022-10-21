@@ -9,7 +9,7 @@ import CadastroOk from '../pages/CadastroRealizado';
 import EsqueceuSenha from '../pages/EsqueceuSenha';
 import NovaSenha from '../pages/NovaSenha';
 import AAA from '../pages/TesteQrCode';
-
+import SobreNos from '../pages/SobreNos';
 
 export default function Rotas(){
 return(
@@ -24,6 +24,8 @@ return(
             <Route path="/usuario/login" element={<LoginUsuario/>} />
             <Route path='/esqueceu/senha' element={<EsqueceuSenha/>} />
             <Route path='/nova/senha' element={<NovaSenha/>}/>
+            <Route path='/sobreNos' element={<SobreNos/>}/>
+
             <Route texto="Chaves Gastas" path='/teste'  element={<AAA/>}/>
         </Routes>
     </BrowserRouter>
