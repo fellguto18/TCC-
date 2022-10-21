@@ -11,6 +11,12 @@ const [src,setSrc] =useState('');
     }, []);
     return(
     <div className='aaaaa'>
-        <img src={src} />
+        <div>
+            <img src={src} />
+            <p>1. Abra o aplicativo Ame Digital em seu smartphone. Caso não o tenha instalado, baixe-o na Google Play ou App Store.
+               2. Clique em pagar e aponte para o QR Code.
+               3. Pronto, agora é só finalizar o pagamento com Ame.</p>
+        </div>
+        
     </div>)
 }
