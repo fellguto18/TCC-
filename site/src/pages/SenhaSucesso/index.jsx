@@ -1,5 +1,7 @@
 import './index.scss';
 
+import{  useNavigate,Link  }from 'react-router-dom'
+
 
 export default function SenhaAltSucesso(){
     return(
@@ -11,7 +13,7 @@ export default function SenhaAltSucesso(){
                 <h3>Aqui está o que você acabou de alterar:</h3>
                 <h2>Sua senha</h2>
 
-                <button >Fazer login</button>
+                <button> <Link to='/'>Fazer login </Link> </button>
             </div>
         </div>
     )

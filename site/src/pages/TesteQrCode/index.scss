@@ -1,7 +1,17 @@
 .aaaaa{
 display: flex;
-align-items: center;
+justify-content: center ;
+height: 900px;
+
 }
 .qrcode{
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    height: 500px;
+}
+p{
+    margin-top: 40px;
 }
