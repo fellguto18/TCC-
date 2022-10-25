@@ -1,4 +1,6 @@
 import './index.scss'
+import '../../common.scss'
+
 import { Link } from "react-router-dom";
 
 export default function NavBarComp(){

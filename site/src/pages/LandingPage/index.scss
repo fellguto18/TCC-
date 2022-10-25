@@ -4,4 +4,42 @@
     box-sizing: border-box;
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+
+
+    .landing-page-f1{
+        display: flex;
+        flex-direction: row;
+        height: 80vh;
+        background-color: #fff;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .landing-page-f2{
+        display: flex;
+        flex-direction: row-reverse;
+        height: 100vh;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .landing-page-f3{
+        background-color: #fff;
+    }
+
+    .landing-page-text{
+        width: 30vh;
+        height: 5vh;
+        
+    }
+
+    p{
+        color: #23272A !important;
+    }
+    
+}
+
 
