@@ -1,0 +1,51 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'kanit-regular';
+    color: inherit;
+    text-decoration: none;
+}
+
+
+.text{
+    color: #fff;
+}
+
+
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    background-color: #4889EA;
+    height: 60vh;
+    padding: 1em;
+
+
+    .margin-l-1em{
+        margin-left: 1em;
+    }
+    .icon{
+        width: 4vh;
+        height: 4vh;
+    }
+
+    .footer-contact{
+        margin-left: 1em;
+    }
+
+    .line{
+        background-color: #fff;
+        height: 1px;
+        width: 100vh;
+    }
+
+    .end-footer{
+        margin-top: 27vh;
+    }
+
+    a:hover{
+        color:#ee4d4d ;
+    }
+}
+

@@ -1,5 +1,5 @@
 import './index.scss'
-
+import '../../common.scss'
 
 //components
 import NavBarComp from '../../components/header'
@@ -12,13 +12,13 @@ export default function LandingPage(){
             <NavBarComp/>
 
             <section className='landing-page-f1'>
-                <picture><img src="/assets/images/imgonelp.svg" alt="" /></picture>
-                <div className='landing-page-text'><p>Nós somos uma organização que tem apenas a intenção de ajudar pessoas. Sem fins lucrativos, este projeto foi feito através de trabalhos voluntários.</p></div>
+                <picture data-aos="fade-right"> <img src="/assets/images/imgonelp.svg" alt="" /></picture>
+                <div className='landing-page-text'><p className='color-text-black'>Nós somos uma organização que tem apenas a intenção de ajudar pessoas. Sem fins lucrativos, este projeto foi feito através de trabalhos voluntários.</p></div>
             </section>
 
             <section className='landing-page-f2'>
-                <picture> <img src="/assets/images/manlp.svg" alt="Pessoa com um coração roxo" /></picture>
-                <div className='landing-page-text'><p>Os projetos são diretamente para pessoas necessitadas, para ajudá-las.</p></div>
+                <picture data-aos="fade-left"> <img src="/assets/images/manlp.svg" alt="Pessoa com um coração roxo"  /></picture>
+                <div className='landing-page-text'><p className='fff'>Os projetos são diretamente para pessoas necessitadas, para ajudá-las.</p></div>
             </section>
 
             <section className='landing-page-f3'>

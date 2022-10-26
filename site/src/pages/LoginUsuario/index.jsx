@@ -77,7 +77,7 @@ export default function LoginUsuario(){
                          <div>
                               <h2 className='cadastrar'>Não tem uma conta? <a className='cadastre-se' >Cadastre-se</a> </h2>
                          </div>
-                         <a className='voltar'>Voltar</a>    
+                         <Link to='/' className='voltar'>Voltar</Link>    
                     </div>   
              </div>       
         </div>    

@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'kanit-regular' ;
     src: url(../public/assets/fonts/kanit/Kanit-Regular.ttf);
@@ -7,5 +8,43 @@
     src: url(../public/assets/fonts/kanit/Kanit-SemiBold.ttf);
 }
 
+html{
+    scroll-behavior: smooth
+}
 
+.font-size-0-7em{
+    font-size: 0.7em;
+}
+
+.fff{
+    color: #fff !important;
+}
+
+.color-text-black{
+    color: #23272A !important;
+}
+
+.flex{
+    display: flex;
+}
+
+.space-around{
+    justify-content: space-around;
+}
+
+.align-itens-center{
+    align-items: center;
+}
+
+.jc-center{
+    justify-content: center;
+}
+
+.align-itens-end{
+    align-items: flex-end;
+}
+
+.jc-space-between{
+    justify-content: space-between;
+}
 

@@ -14,6 +14,9 @@ import DoacaoRealizada from '../pages/ConfirmacaoDoacao';
 import Grafico from '../pages/Grafico';
 import SenhaAltSucesso from '../pages/SenhaSucesso';
 
+//teste
+import Footer from '../components/footer';
+
 export default function Rotas(){
 return(
     <BrowserRouter>
@@ -35,6 +38,8 @@ return(
 
 
             <Route path='/senha/sucesso' element={<SenhaAltSucesso/>}/>
+
+            <Route path='/footer' element={<Footer/>} />
         </Routes>
     </BrowserRouter>
 )
