@@ -3,6 +3,8 @@ import { useState } from "react";
 
 //estilos
 import './index.scss'
+import '../../common.scss'
+
 import { toast } from 'react-toastify';
 
 import { cadastrarProjeto, enviarImagemProjeto } from "../../api/projetoApi";
@@ -79,7 +81,7 @@ export default function CadastrarProjeto(){
                     </div>
                     <div className="box-input">
                         <p>Descrição</p>
-                        <input type="text" className="input"  value={descricao} onChange={e => setDescricao(e.target.value)} />
+                        <input type="text" className="input pointer"  value={descricao} onChange={e => setDescricao(e.target.value)} />
                     </div>
                     <div className="box-input">
                         <p>Objetivos do projeto</p>
@@ -87,7 +89,7 @@ export default function CadastrarProjeto(){
                     </div>
                </div>
                <div>
-                    <div className="box-img" onClick={escolherImagem}>
+                    <div className="box-img pointer" onClick={escolherImagem}>
                         {!imagem &&
                             <img src="/assets/images/download.svg" alt="Logo de download" className="img-download" />
                         }

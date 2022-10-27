@@ -123,3 +123,14 @@ export async function consultarDoador(filtro){
     const linhas = resposta[0];
     return linhas;
 }
+
+//nossos projetos
+export async function nossosProjetos(){
+    const comando = 
+    `select nm_projeto   nome,
+            img_projeto
+        from tb_projeto`
+    const resp = await con.query(comando);
+    return resp[0]
+}
+

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { login, adicionarProjeto, removerProjeto, alterarImagem, consultarProjetos, consultarDoador, editarProjeto, listarTodosDoadores, listarTodosProjetos } from '../repository/adminRepository.js';
+import { login, adicionarProjeto, removerProjeto, alterarImagem, consultarProjetos, consultarDoador, editarProjeto, listarTodosDoadores, listarTodosProjetos, nossosProjetos } from '../repository/adminRepository.js';
 
 import multer from 'multer';
 
@@ -176,3 +176,19 @@ server.get('/admin/doador?data', async (req,resp) => {
     }
 })
 
+
+//nossos projetos
+server.get('/nossosProjetos', async (req, resp) => {
+    try{
+        const resposta = await nossosProjetos();
+        resp.send(resposta)
+
+        if(!resposta)
+            throw new Error('Não há projetos!')
+    }
+    catch(err){
+        resp.status(400).send([
+            err.message
+        ])
+    }
+})

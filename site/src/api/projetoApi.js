@@ -23,3 +23,8 @@ export async function enviarImagemProjeto(id, imagem){
     });
     return resposta.status;
 }
+
+export async function listarProjeto() {
+    const resposta = await api.get('nossosProjetos');
+    return resposta.data;
+}

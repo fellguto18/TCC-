@@ -10,9 +10,11 @@ import EsqueceuSenha from '../pages/EsqueceuSenha';
 import NovaSenha from '../pages/NovaSenha';
 import AAA from '../pages/TesteQrCode';
 import SobreNos from '../pages/SobreNos';
+import NossosProjetos from '../pages/NossosProjetos';
 import DoacaoRealizada from '../pages/ConfirmacaoDoacao';
 import Grafico from '../pages/Grafico';
 import SenhaAltSucesso from '../pages/SenhaSucesso';
+
 
 //teste
 import Footer from '../components/footer';
@@ -31,6 +33,7 @@ return(
             <Route path='/esqueceu/senha' element={<EsqueceuSenha/>} />
             <Route path='/nova/senha' element={<NovaSenha/>}/>
             <Route path='/sobreNos' element={<SobreNos/>}/>
+            <Route path='/nossosprojetos' element={<NossosProjetos/>} />
 
             <Route path='/teste'  element={<AAA/>}/>
             <Route path='/doacao/realizada' element={<DoacaoRealizada/>}/>

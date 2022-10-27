@@ -28,6 +28,10 @@ html{
     display: flex;
 }
 
+.fd-column{
+    flex-direction: column;
+}
+
 .space-around{
     justify-content: space-around;
 }
@@ -46,5 +50,9 @@ html{
 
 .jc-space-between{
     justify-content: space-between;
+}
+
+.pointer{
+    cursor: pointer;
 }
 
