@@ -69,6 +69,9 @@ server.delete('/admin/projeto/:id', async (req, resp) => {
 //alterar imagem do projeto
 server.put('/admin/projeto/:id/imagem', upload.single('imagem'), async (req, resp) => {
     try {
+        if(!req.file)
+            throw new Error('Escolha a imagem do projeto.');
+
         const { id } = req.params;
         const imagem = req.file.path;
 
@@ -76,7 +79,7 @@ server.put('/admin/projeto/:id/imagem', upload.single('imagem'), async (req, res
         if (resposta != 1)
             throw new Error('A imagem não pode ser salva.');
 
-        resp.status(204).send(resposta);
+        resp.status(204).send();
     } catch (err) {
         resp.status(400).send({
             erro: err.message
