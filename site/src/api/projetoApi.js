@@ -28,3 +28,12 @@ export async function listarProjeto() {
     const resposta = await api.get('nossosProjetos');
     return resposta.data;
 }
+
+export async function listarProjetoPorID(id){
+    const resposta = await api.get(`/projeto/${id}`);
+    return resposta.data;
+}
+
+export async function buscarImagem(imagem){
+    return `${api.getUri()}/${imagem}`
+}

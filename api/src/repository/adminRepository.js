@@ -13,6 +13,21 @@ export async function listarTodosProjetos(){
     return resp[0]
 }
 
+//buscarProjetoporID
+
+export async function listarProjetoPorID(id){
+    const comando =
+    `select id_projeto   id,
+            nm_projeto   nome,
+            ds_projeto   descricao,
+            vl_meta      meta,
+            img_projeto  imagem
+        from tb_projeto
+        where id_projeto = ?`;
+    const [linhas] = await con.query(comando,[id]);
+    return linhas[0];    
+}
+
 //login admin
 export async function login(email, senha){
     const comando = 

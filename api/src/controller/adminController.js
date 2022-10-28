@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { login, adicionarProjeto, removerProjeto, alterarImagem, consultarProjetos, consultarDoador, editarProjeto, listarTodosDoadores, listarTodosProjetos, nossosProjetos } from '../repository/adminRepository.js';
+import { login, adicionarProjeto, removerProjeto, alterarImagem, consultarProjetos, consultarDoador, editarProjeto, listarTodosDoadores, listarTodosProjetos, nossosProjetos, listarProjetoPorID } from '../repository/adminRepository.js';
 
 import multer from 'multer';
 
@@ -190,5 +190,25 @@ server.get('/nossosProjetos', async (req, resp) => {
         resp.status(400).send([
             err.message
         ])
+    }
+})
+
+//selecionar por ID
+server.get('/projeto/:id', async (req, resp) => {
+    try{
+        const id = Number(req.params.id);
+
+        const resposta = await listarProjetoPorID(id);
+
+        if(!resposta)
+            resp.status(404).send([]);
+        else
+            resp.send(resposta);
+   
+    }
+    catch(err){
+        resp.status(400).send({
+            erro : err.message
+        })
     }
 })

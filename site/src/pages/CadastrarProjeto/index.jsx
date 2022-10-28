@@ -7,7 +7,7 @@ import '../../common.scss'
 
 import { toast } from 'react-toastify';
 
-import { cadastrarProjeto, enviarImagemProjeto } from "../../api/projetoApi";
+import { buscarImagem, cadastrarProjeto, enviarImagemProjeto } from "../../api/projetoApi";
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
@@ -54,7 +54,12 @@ export default function CadastrarProjeto(){
     }
 
     function mostrarImagem(){
+        if (typeof (imagem) == 'object') {
         return URL.createObjectURL(imagem);
+        }
+        else{
+            return buscarImagem(imagem);
+        }
     }
 
     return(

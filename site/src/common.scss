@@ -56,3 +56,16 @@ html{
     cursor: pointer;
 }
 
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    background: #F4F4F4;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4889EA;
+    border-radius: 5px;
+}
+

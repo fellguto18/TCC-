@@ -19,6 +19,7 @@ import MenuAdmin from '../components/menuAdmin'
 
 //teste
 import Footer from '../components/footer';
+import DetalhesProjeto from '../pages/DetalhesProjeto';
 
 export default function Rotas(){
 return(
@@ -34,10 +35,12 @@ return(
             <Route path='/esqueceu/senha' element={<EsqueceuSenha/>} />
             <Route path='/nova/senha' element={<NovaSenha/>}/>
             <Route path='/sobreNos' element={<SobreNos/>}/>
-
+            <Route path='/nossosprojetos'  element={<NossosProjetos/>}/>
+            <Route path='projeto/:idParam' element={<DetalhesProjeto/>}/>
             <Route path='/teste'  element={<AAA/>}/>
             <Route path='/doacao/realizada' element={<DoacaoRealizada/>}/>
             <Route path='/grafico' element={<Grafico/>}/>
+            
 
 
             <Route path='/senha/sucesso' element={<SenhaAltSucesso/>}/>
