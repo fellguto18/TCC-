@@ -67,7 +67,7 @@ export default function LoginUsuario(){
                     </div>   
                     <br />
                     <div><Link to='/admin/login'>Sou adm</Link></div>
-                    <div className='esqueceu-senha'><a>Esqueceu senha?</a> </div>
+                    <div className='esqueceu-senha'><Link to='/esqueceu/senha' > Esqueceu senha?</Link> </div>
                     <div className='erro'>{erro}</div>
                     <br />
                     <div className='botoes'>

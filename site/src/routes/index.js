@@ -15,7 +15,7 @@ import DoacaoRealizada from '../pages/ConfirmacaoDoacao';
 import Grafico from '../pages/Grafico';
 import SenhaAltSucesso from '../pages/SenhaSucesso';
 import MenuAdmin from '../components/menuAdmin'
-
+import Laraputa from '../pages/9.eviaremail';
 
 //teste
 import Footer from '../components/footer';
@@ -40,7 +40,7 @@ return(
             <Route path='/teste'  element={<AAA/>}/>
             <Route path='/doacao/realizada' element={<DoacaoRealizada/>}/>
             <Route path='/grafico' element={<Grafico/>}/>
-            
+            <Route path='/email' element={<laraputa/>}/>
 
 
             <Route path='/senha/sucesso' element={<SenhaAltSucesso/>}/>
