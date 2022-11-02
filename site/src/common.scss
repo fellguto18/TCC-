@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'kanit-regular' ;
     src: url(../public/assets/fonts/kanit/Kanit-Regular.ttf);
@@ -6,7 +7,72 @@
     font-family: 'kanit-semibold';
     src: url(../public/assets/fonts/kanit/Kanit-SemiBold.ttf);
 }
+<<<<<<< HEAD
 @font-face {
     font-family: 'mukta-regular';
     src: url(../public/assets/fonts/mukta/Mukta-Regular.ttf);
 }
+=======
+
+html{
+    scroll-behavior: smooth
+}
+
+.font-size-0-7em{
+    font-size: 0.7em;
+}
+
+.fff{
+    color: #fff !important;
+}
+
+.color-text-black{
+    color: #23272A !important;
+}
+
+.flex{
+    display: flex;
+}
+
+.fd-column{
+    flex-direction: column;
+}
+
+.space-around{
+    justify-content: space-around;
+}
+
+.align-itens-center{
+    align-items: center;
+}
+
+.jc-center{
+    justify-content: center;
+}
+
+.align-itens-end{
+    align-items: flex-end;
+}
+
+.jc-space-between{
+    justify-content: space-between;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    background: #F4F4F4;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4889EA;
+    border-radius: 5px;
+}
+
+>>>>>>> b3987356b6a662e456fd5db865c022ed0db68551

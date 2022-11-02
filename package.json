@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "chart.js": "^3.9.1",
+    "js": "^0.1.0",
+    "nodemailer": "^6.8.0",
+    "qrcode": "^1.5.1",
+    "react-chart": "^0.0.1",
+    "react-chartjs-2": "^4.3.1",
+    "react-qr-code": "^2.0.8"
+  }
+}

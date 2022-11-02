@@ -11,6 +11,7 @@ server.use(cors());
 server.use(express.json());
 
 server.use('/storage/imgProjetos', express.static('storage/imgProjetos'));
+
 server.use(adminController);
 server.use(usuarioController);
 
