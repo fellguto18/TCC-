@@ -23,3 +23,13 @@ export async function cadastrarUsuario(nome,cpf,email,senha,confirmar){
 
     return resposta.data;
 }
+
+export async function realizarDoacao(usuario, projetoId, valor, dia){
+    const resposta = await api.post('/usuario/doacao',{
+        usuario:usuario,
+        projeto:projetoId,
+        doacao:valor,
+        data:dia
+    });
+    return resposta.data;
+}

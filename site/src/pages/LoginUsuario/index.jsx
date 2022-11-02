@@ -50,7 +50,7 @@ export default function LoginUsuario(){
         
      return(
      <div className='a' >
-          <LoadingBar color='#000' ref={ref} />
+          <LoadingBar color='#4889ea' ref={ref} />
 
           <img className='logo' src={logo} />
           <div className='cadastrar-adm' >                         

@@ -13,6 +13,7 @@ import SobreNos from '../pages/SobreNos';
 import DoacaoRealizada from '../pages/ConfirmacaoDoacao';
 import Grafico from '../pages/Grafico';
 import SenhaAltSucesso from '../pages/SenhaSucesso';
+import Pagamento from '../pages/Pagamento';
 
 export default function Rotas(){
 return(
@@ -28,6 +29,8 @@ return(
             <Route path='/esqueceu/senha' element={<EsqueceuSenha/>} />
             <Route path='/nova/senha' element={<NovaSenha/>}/>
             <Route path='/sobreNos' element={<SobreNos/>}/>
+            <Route path='/usuario/doacao' element={<Pagamento/>}/>
+
 
             <Route path='/teste'  element={<AAA/>}/>
             <Route path='/doacao/realizada' element={<DoacaoRealizada/>}/>
