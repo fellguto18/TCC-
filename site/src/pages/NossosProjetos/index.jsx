@@ -25,11 +25,12 @@ export default function NossosProjetos(){
     return(
         <>
             <NavBarComp/>
-            <main className='flex fd-column NossosProjetos-page'>
-                
-                <div className='box flex column jc-center align-itens-center'>
-               
-                    <div className='card-container'>
+            <main className='flex fd-column jc-center align-itens-center '>
+                <div className='box flex fd-column jc-center align-itens-center'>
+                    <div className='texto'>
+                        <h3>Conheça nossos projetos:</h3>    
+                    </div>   
+                    <div className='card-container jc-center'>
                         {projetos.map(item => 
                             <div className='card'>
                                 <div>
@@ -44,4 +45,4 @@ export default function NossosProjetos(){
             </main>
         </>
     )
-}
+ }    

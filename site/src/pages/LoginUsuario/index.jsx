@@ -75,7 +75,7 @@ export default function LoginUsuario(){
                               <button className='bt-entrar' onClick={entrarClick} disabled={carregando}> <a >Entrar</a> </button>
                          </div>
                          <div>
-                              <h2 className='cadastrar'>Não tem uma conta? <a className='cadastre-se' >Cadastre-se</a> </h2>
+                              <h2 className='cadastrar'>Não tem uma conta? <Link to='/usuario/cadastrar' className='cadastre-se' >Cadastre-se</Link> </h2>
                          </div>
                          <Link to='/' className='voltar'>Voltar</Link>    
                     </div>   

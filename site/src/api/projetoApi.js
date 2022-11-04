@@ -12,6 +12,16 @@ export async function cadastrarProjeto(nome, descricao, meta){
     return resposta.data;
 }
 
+export async function alterarProjeto(id, nome, descricao, meta){
+    const resposta = await api.put(`/admin/projeto/${id}`, {
+        nome : nome,
+        descricao : descricao,
+        meta: meta,
+    })
+    return resposta.data;
+}
+
+
 export async function enviarImagemProjeto(id, imagem){
     const formData = new FormData();
     formData.append('imagem', imagem);

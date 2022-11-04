@@ -1,6 +1,13 @@
-body{
-    background: linear-gradient(0deg, rgba(255,255,255,1) 15%, rgba(72,137,234,1) 70%) no-repeat;
-    }
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+
+    body{
+        background: linear-gradient(0deg, rgba(255,255,255,1) 15%, rgba(72,137,234,1) 70%) no-repeat;
+        }
 
     
     p{
@@ -67,7 +74,9 @@ body{
         height: 16vw;
         border-radius: 35px;
       }
-
+      .box-button{
+        margin-bottom: 15vh;
+      }
       .button{
       width: 15vh;
       height: 5vh;
@@ -75,16 +84,15 @@ body{
       background: #4889EA;
       border-radius: 35px;
       border: none;
-      margin-top: 35em;
-      margin-right: 20em;
+      margin-left: 1em;
+
+     
     
   }
    .button:hover{
       transform: scale(1.01,1.01);
       color:#5794f0
   }
-    .editar{
-      color: #51A943;
-    }  
+    
   
   }

@@ -87,29 +87,33 @@ server.put('/admin/projeto/:id/imagem', upload.single('imagem'), async (req, res
     }
 })
 
+
+
 //alterar projeto
-server.put('/admin/projeto/:nome', async (req, resp) => {
+server.put('/admin/projeto/:id', async (req, resp) => {
     try {
-        const { nome } = req.params;
+        const { id } = req.params;
         const projeto = req.body;
-        const resposta = await editarProjeto(nome, projeto);
-      
-        if ( !resposta.nome )
-            throw new Error('O nome do projeto é obrigatório.');
-        if ( !resposta.meta )
+
+        if (!projeto.nome )
+        throw new Error('O nome do projeto é obrigatório.');
+        if (!projeto.meta )
             throw new Error('A meta do projeto é obrigatória.');
-        if ( !resposta.descricao )
+        if (!projeto.descricao )
             throw new Error('A descrição do projeto é obrigatória.');
-    
-            
-            
-        resp.status(204).send(resposta);
-    } catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        })
-    }
+
+        const resposta = await editarProjeto(id, projeto);
+        if(resposta != 1)
+                throw new Error('Projeto não pode ser alterado!');
+        else
+            resp.status(204).send();
+        } catch (err) {
+            resp.status(400).send({
+                erro: err.message
+            })
+        }
 })
+
 //selecionar todos projetos
 server.get('/admin/projetos', async (req, resp) => {
     try{

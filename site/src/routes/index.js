@@ -18,11 +18,12 @@ import SenhaAltSucesso from '../pages/SenhaSucesso';
 import Pagamento from '../pages/Pagamento';
 
 import MenuAdmin from '../components/menuAdmin'
-import Laraputa from '../pages/9.eviaremail';
+//import Laraputa from '../pages/9.eviaremail';
 
 //teste
 import Footer from '../components/footer';
 import DetalhesProjeto from '../pages/DetalhesProjeto';
+import SideMenu from '../components/sideMenu';
 
 
 export default function Rotas(){
@@ -45,12 +46,12 @@ return(
             <Route path='/teste'  element={<AAA/>}/>
             <Route path='/doacao/realizada' element={<DoacaoRealizada/>}/>
             <Route path='/grafico' element={<Grafico/>}/>
-            <Route path='/email' element={<laraputa/>}/>
 
 
             <Route path='/senha/sucesso' element={<SenhaAltSucesso/>}/>
 
             <Route path='/footer' element={<Footer/>} />
+            <Route path='/sidemenu' element={<SideMenu/>} />
         </Routes>
     </BrowserRouter>
 )

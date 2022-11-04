@@ -5,9 +5,12 @@ import { useState } from "react";
 import './index.scss'
 import '../../common.scss'
 
+//componentes
+import SideMenu from '../../components/sideMenu';
+
 import { toast } from 'react-toastify';
 
-import { buscarImagem, cadastrarProjeto, enviarImagemProjeto } from "../../api/projetoApi";
+import { buscarImagem, cadastrarProjeto, enviarImagemProjeto, alterarProjeto } from "../../api/projetoApi";
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
@@ -25,17 +28,28 @@ export default function CadastrarProjeto(){
     const [descricao, setDescricao] = useState('');
     const [meta, setMeta] = useState('');
     const [imagem, setImagem] = useState();
+    const [id, setId] = useState(0);
 
     async function salvarClick(){
         try {
             if(!imagem)
-               throw new Error('Escolha a capa do filme.')    
+               throw new Error('Escolha a imagem do projeto.')    
 
-          const usuario = storage('usuario-logado').id;  
-          const novoProjeto = await cadastrarProjeto(nome, descricao, Number(meta), usuario);
-          await enviarImagemProjeto(novoProjeto.id, imagem);
+          const usuario = storage('usuario-logado').id;
+          
+          if(id === 0) {
+            const novoProjeto = await cadastrarProjeto(nome, descricao, Number(meta), usuario);
+            await enviarImagemProjeto(novoProjeto.id, imagem);
 
-          toast('🚀 Projeto cadastrado com sucesso!')
+            setId(novoProjeto.id)
+            toast('🚀 Projeto cadastrado com sucesso!')
+          }
+          else{
+            await alterarProjeto(id, nome, descricao, Number(meta), usuario);
+            await enviarImagemProjeto(id, imagem);
+            toast('🚀 Projeto alterado com sucesso!')
+          }
+
         } catch (err) {
            if(err.response)  
              toast.error(err.response.data.erro);
@@ -62,6 +76,14 @@ export default function CadastrarProjeto(){
         }
     }
 
+    function novoClick(){
+        setId(0);
+        setNome('');
+        setDescricao('');
+        setMeta('');
+        setImagem();
+    }
+
     return(
 
            <>
@@ -71,10 +93,10 @@ export default function CadastrarProjeto(){
                        <img src="/assets/images/logo.svg" alt="Logo do site" className='logo' />
                        </div>
                        <div className='side-menu-links'>
-                             <p>Projetos</p>
-                             <p>Doadores</p>
-                             <p>Estatísticas</p>
-                             <p onClick={sairClick}>Sair</p>
+                             <p className='fff'>Projetos</p>
+                             <p className='fff'>Doadores</p>
+                             <p className='fff'>Estatísticas</p>
+                             <p onClick={sairClick} className='fff pointer'>Sair</p>
                        </div>
                </aside>
                <div className='menuzao'>
@@ -103,10 +125,11 @@ export default function CadastrarProjeto(){
                         }
                         <input type='file' id='imagemProjeto' onChange={e => setImagem(e.target.files[0])} />
                     </div>
-                    <h4 className='editar'>Editar projeto</h4>
+                    
                </div>
-               <div className="box-button">
-                <button onClick={salvarClick} className="button">Publicar</button>
+               <div className="flex box-button align-itens-end">
+                <button onClick={salvarClick} className="button">{id === 0 ? 'Publicar' : 'Alterar'}</button>
+                <button onClick={novoClick} className="button">Novo</button>
                </div>
                 
           </div>
