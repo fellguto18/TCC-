@@ -19,17 +19,18 @@ export default function Pagamento(usuario){
     async function Click(){
         try{
             const r = await realizarDoacao(usuario, valor);
-            if(!usuario.nome)
+            if(usuario.nome == undefined)
                 throw new Error('Nome é obrigatório!')
-            if(!usuario.email)
+            if(!usuario.email == undefined)
                 throw new Error('Email é obrigatório!')
-            if(!usuario.cpf)
+            if(usuario.cpf == undefined)
                 throw new Error('CPF é obrigatório!')
-            if(!valor)
+            if(valor == undefined)
                 throw new Error('Selecione um valor!')
             navigate('/teste')
+            toast('🚀  Doação efetuada com sucesso!')
         }catch(err){
-            toast.error(err.response.data.erro)
+           toast(err.response.data.erro)
         }
     }
 
@@ -39,7 +40,7 @@ export default function Pagamento(usuario){
                 <div>
                     <div className='card_input'>
                         <label>Nome</label>
-                        <input type='text' value={usuario.nome} onChange={e => setNome(e.target.value)}></input>
+                        <input type='text' value={nome} onChange={e => setNome(e.target.value)}></input>
                     </div>
 
                     <div className='card_input'>
@@ -66,7 +67,7 @@ export default function Pagamento(usuario){
                     
 
                 <button onClick={Click}>Gerar QRCode</button>
-                <div></div>
+                
                 
             </div>
         </main>

@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { cadastrarUsuario, loginUsuario, realizarDoacao } from "../repository/usuarioRepository.js";
 
-import nodemailer from 'nodemailer'
+//import nodemailer from 'nodemailer'
 
 const server = Router();
 
@@ -79,7 +79,7 @@ server.post('/usuario/doacao', async (req,resp) => {
     }
 })
 
-server.post('/enviar-email', async (req, resp) =>{
+/*server.post('/enviar-email', async (req, resp) =>{
     let data = req.body;
     const transport = nodemailer.createTransport({
     host: process.env.HOST,
@@ -138,7 +138,7 @@ server.post('/enviar-email', async (req, resp) =>{
         }
         return resp.status(200).send('Email enviado com sucesso!')
     })
-})
+})*/
 
 
 export default server;
