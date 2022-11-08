@@ -66,6 +66,7 @@ export default function Pagamento(usuario){
                     
 
                 <button onClick={Click}>Gerar QRCode</button>
+                <div></div>
                 
             </div>
         </main>
