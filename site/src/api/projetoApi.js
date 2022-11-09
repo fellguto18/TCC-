@@ -35,7 +35,7 @@ export async function enviarImagemProjeto(id, imagem){
 }
 
 export async function listarProjeto() {
-    const resposta = await api.get('nossosProjetos');
+    const resposta = await api.get('/nossosProjetos');
     return resposta.data;
 }
 
@@ -44,6 +44,6 @@ export async function listarProjetoPorID(id){
     return resposta.data;
 }
 
-export async function buscarImagem(imagem){
+export function buscarImagem(imagem){
     return `${api.getUri()}/${imagem}`
 }

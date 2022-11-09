@@ -42,7 +42,7 @@ return(
             <Route path='/sobreNos' element={<SobreNos/>}/>
             <Route path='/usuario/doacao' element={<Pagamento/>}/>
             <Route path='/nossosprojetos'  element={<NossosProjetos/>}/>
-            <Route path='projeto/:idParam' element={<DetalhesProjeto/>}/>
+            <Route path='/projeto/:idParam' element={<DetalhesProjeto/>}/>
             <Route path='/teste'  element={<AAA/>}/>
             <Route path='/doacao/realizada' element={<DoacaoRealizada/>}/>
             <Route path='/grafico' element={<Grafico/>}/>
