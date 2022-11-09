@@ -4,9 +4,13 @@ import doacao1 from '../../assets/images/doacao_1.png';
 import doacao2 from '../../assets/images/donate_1.png';
 import contribuir1 from '../../assets/images/contribuir_1.png'
 
+//components
+import NavBarComp from '../../components/header';
+
 export default function SobreNos(){
     return(
         <section className='pg_sobre'>
+            <NavBarComp/>
             <div className='fx_branca'>
                 <div className='fb_textos'>
                     <h1>Quem somos?</h1>

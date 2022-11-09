@@ -13,7 +13,7 @@ export default function NavBarComp(){
                 </Link>
 
                 <ul className='list'>
-                    <li className='item'> <Link>Sobre nós</Link></li>
+                    <li className='item'> <Link to='/sobreNos'>Sobre nós</Link></li>
                         <div className='line'></div>
                     <li className='item'> <Link to='/nossosprojetos'>Nossos projetos</Link></li>
                         <div className='line'></div>
