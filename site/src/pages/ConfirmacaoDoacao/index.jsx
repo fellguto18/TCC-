@@ -1,4 +1,4 @@
-import './index.scss';
+import './doacaosucesso.scss';
 import confirmar from '../../assets/images/confirmarDoacao.png'
 
 import storage from 'local-storage';
@@ -19,8 +19,8 @@ export default function DoacaoRealizada(){
             <div className='ii'>
                 <img className='img' src={confirmar} />
                 <h1>Muito obrigado pela sua doação!</h1>
-                <h3>O que se compartinha, multiplica-se no futuro</h3>
-                <button onClick={sairClick}>Voltar à página</button>
+                <h3>O que se compartilha, multiplica-se no futuro...</h3>
+                <button className='botao-3' onClick={sairClick}>Voltar à página</button>
             </div>
             
         </div>

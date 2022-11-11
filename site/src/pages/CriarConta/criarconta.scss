@@ -1,7 +1,7 @@
 
 .e{
-    width: 1462px ; 
-    height: 737px;
+    width: 1280px ; 
+    height: 900px;
     background-image: url("../../assets/images/fundo.png") ; 
 }
 body{
@@ -13,6 +13,8 @@ body{
 .b{
     display: flex;
     justify-content: center;
+    margin-left: 30em;
+    margin-top: 5em;
 }
 
 .logo{

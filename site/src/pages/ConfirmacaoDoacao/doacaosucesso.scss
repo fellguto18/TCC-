@@ -1,8 +1,8 @@
 .doacao{
     display: flex;
     justify-content: center;
-    width: 1290px;
-    height: 750px;
+    align-items: center;
+    min-height: 93vh;
 }
 
 
@@ -15,6 +15,7 @@
     margin-top: 60px;
     align-items: center;
     border-radius: 30px;
+    margin-top: 40px;
 }
 .img{
     width: 200px;
@@ -26,9 +27,12 @@ h1{
 h3{
     color: #4889EA;
 }
-button{
+.botao-3{
+    margin-top: 2em;
     color: white;
+    border-radius: 10px;
+    height: 2em;
+    width: 8em;
     background-color: #4889EA;
-    border-radius: 30px;
-    
+
 }

@@ -1,0 +1,50 @@
+.page-esqueceusenha {
+    width: 1462px;
+    height: 737px;
+    margin: 10vh 10vh;
+
+    .logo-1{
+        width: 7em;
+        height: 5em;
+        margin-left: -3em;
+        display: flex;
+        justify-self: start;
+    }
+
+    p {
+        color: white;
+    }
+
+    .aaa {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .texto {
+        width: 300px;
+        border-radius: 10px;
+        border-bottom: 1px solid #4889EA;
+        padding-left: 25px;
+        outline: none;
+    }
+
+    .div-botao {
+        display: flex;
+        margin-left: 1em;
+    }
+
+    .botao-1 {
+        border-radius: 10px;
+        height: 3.5m;
+        width: 5.5em;
+        margin-top: 1em;
+        margin-left: 1em;
+    }
+
+    .botao-2 {
+        margin-top: 1em;
+        border-radius: 10px;
+        height: 3.5m;
+        width: 5.5em;
+    }
+}

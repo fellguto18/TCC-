@@ -13,7 +13,7 @@ export default function DetalheProjeto(props) {
                     <p className='sinopse'> {props.projeto.descricao}</p>
                 </div>
                 <div>
-                    <button className='botao'>Faça a sua contribuição</button>
+                    <button className='botao-detalhe'>Faça a sua contribuição</button>
                 </div>
             </div>
             
