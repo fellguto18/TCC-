@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function NavBarComp(){
     return(
         <>
-            <header className='navbar'>
+            <header className='navbar align-itens-center'>
 
                 <Link to='/'>
                     <img src="/assets/images/logo.svg" alt="Logo do site" className='logo' />

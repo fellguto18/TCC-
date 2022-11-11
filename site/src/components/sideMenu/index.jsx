@@ -1,6 +1,8 @@
 import './index.scss'
 import '../../common.scss'
 
+import{  useNavigate, Link  }from 'react-router-dom';
+
 export default function SideMenu(){
     return(
         <>

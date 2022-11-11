@@ -20,7 +20,7 @@ function CadastroAdm(){
 
      useEffect(() => {
           if(storage('usuario-logado')) {
-               navigate('/admin/menu');
+               navigate('/sidemenu');
           }
      }, [])
      
@@ -34,7 +34,7 @@ function CadastroAdm(){
          
 
           setTimeout(() => {
-               navigate('/admin/menu');
+               navigate('/sidemenu');
           }, 3000);
 
 

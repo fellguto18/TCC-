@@ -12,9 +12,7 @@ export default function DetalheProjeto(props) {
                 <div className='info'>
                     <p className='sinopse'> {props.projeto.descricao}</p>
                 </div>
-                <div>
-                    <button className='botao-detalhe'>Faça a sua contribuição</button>
-                </div>
+              
             </div>
             
         </div>

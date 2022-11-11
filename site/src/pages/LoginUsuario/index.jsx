@@ -6,9 +6,9 @@ import LoadingBar from 'react-top-loading-bar'
 import { useState, useRef, useEffect} from 'react'
 
 import './index.scss'
+import '../../common.scss'
 import logo from '../../assets/images/logo.png'
 
- 
 export default function LoginUsuario(){ 
      const[email, setEmail] = useState('');
      const[senha, setSenha] = useState('');

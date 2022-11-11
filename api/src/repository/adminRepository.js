@@ -143,7 +143,8 @@ export async function consultarDoador(filtro){
 //nossos projetos
 export async function nossosProjetos(){
     const comando = 
-    `select nm_projeto   nome,
+    `select id_projeto   id,
+            nm_projeto   nome,
             img_projeto
         from tb_projeto`
     const resp = await con.query(comando);
