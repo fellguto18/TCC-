@@ -61,9 +61,9 @@ export default function CriarConta() {
             <p>E-mail</p>
             <input type="text" value={email} onChange={e => setEmail(e.target.value)} />
             <p>Senha</p>
-            <input type="text" value={senha} onChange={e => setSenha(e.target.value)} />
+            <input type="password" value={senha} onChange={e => setSenha(e.target.value)} />
             <p>Confirme sua senha</p>
-            <input type="text" value={confirmar} onChange={e => setConfirmar(e.target.value)} />
+            <input type="password" value={confirmar} onChange={e => setConfirmar(e.target.value)} />
             <button className='botaoCadastar' onClick={entrarClick}  >  Cadastrar</button>
           </div>
           <div className='inf-img'>

@@ -4,6 +4,7 @@ import '../../common.scss'
 //components
 import NavBarComp from '../../components/header'
 import Footer from '../../components/footer'
+import Carousel from '../../components/carrosel'
 
 export default function LandingPage(){
     return(
@@ -24,7 +25,7 @@ export default function LandingPage(){
             <section className='landing-page-f3'>
                 <h2>Projetos ativos</h2>
                 <div>
-                    Carrosel em construção
+                    <Carousel/>
                 </div>
             </section>
 

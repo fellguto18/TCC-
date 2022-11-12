@@ -23,7 +23,8 @@ import MenuAdmin from '../components/menuAdmin'
 //teste
 import DetalhesProjeto from '../pages/DetalhesProjeto';
 import SideMenu from '../components/sideMenu';
-
+import Footer from '../components/footer';
+import Carousel from '../components/carrosel';
 
 export default function Rotas(){
 return(
@@ -50,6 +51,10 @@ return(
             <Route path='/senha/sucesso' element={<SenhaAltSucesso/>}/>
 
             <Route path='/sidemenu' element={<SideMenu/>} />
+            <Route path='/footer' element={<Footer/>} />
+            <Route path='/carousel' element={<Carousel/>} />
+
+
         </Routes>
     </BrowserRouter>
 )

@@ -10,8 +10,8 @@ export default function Footer(){
                 <div className='flex align-itens-end jc-center'>
                     <p className='text'>Entre em contato conosco</p>
                     <div className='flex footer-contact'>
-                        <img src="/assets/images/whatsapplogo.svg" alt="" className='icon' />
-                        <img src="/assets/images/mailLogo.svg" alt="" className='icon'/>
+                        <img src="/assets/images/whats.svg" alt="" className='icon' />
+                        <img src="/assets/images/emailll.svg" alt="" className='icon'/>
                         <img src="/assets/images/instagramlogo.svg" alt="" className='icon'/>
                     </div>
                 </div>
