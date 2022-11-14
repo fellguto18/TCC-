@@ -1,10 +1,11 @@
 .pg_sobre{
-
+    width: 1280px ; 
+    height: 900px;
     .fx_branca{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-
+        height: 300px;
         
         background-color: #fff;
         .fb_textos p, h1{
@@ -14,6 +15,7 @@
     .fx_azul{
         display: flex;
         flex-direction: row;
+        height: 300px;
         background-color: #4889ea;
         .fa_textos p, h1{
             color: white;
@@ -21,10 +23,22 @@
     }
 
     .img_questao1{
-        width: 20vh;
-        height: auto;
+        width: 30vh;
+        height: 30vh;
         margin-top: 2em;
     }
+    .img_doacao1{
+        width: 30vh;
+        height: 30vh;
+        margin-top: 2em;
+    }
+    .img_300{
+        width: 30vh;
+        height: 30vh;
+        margin-top: 2em;
+    
+    }
+
 
     h1{
         font-family: 'kanit-semibold';

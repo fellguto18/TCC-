@@ -1,4 +1,4 @@
-import './index.scss';
+import './sobrenos.scss';
 import questao1 from '../../assets/images/questao_1.png';
 import doacao1 from '../../assets/images/doacao_1.png';
 import doacao2 from '../../assets/images/donate_1.png';
