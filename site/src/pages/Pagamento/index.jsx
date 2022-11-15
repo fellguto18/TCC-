@@ -13,24 +13,27 @@ export default function Pagamento(usuario){
     const[cpf, setCpf] = useState();
     const[email, setEmail] = useState();
     const[valor, setValor] = useState();
+    const[data, setData] = useState();
     const navigate= useNavigate();
 
 
     async function Click(){
         try{
-            const r = await realizarDoacao(usuario, valor);
-            if(usuario.nome == undefined)
+            const r = await realizarDoacao(nome, cpf, email, valor, data);
+            if(nome == undefined)
                 throw new Error('Nome é obrigatório!')
-            if(!usuario.email == undefined)
+            if(email == undefined)
                 throw new Error('Email é obrigatório!')
-            if(usuario.cpf == undefined)
+            if(cpf == undefined)
                 throw new Error('CPF é obrigatório!')
             if(valor == undefined)
                 throw new Error('Selecione um valor!')
+            if(data == undefined)
+                throw new Error('Data é obrigatória!')
             navigate('/teste')
             toast('🚀  Doação efetuada com sucesso!')
         }catch(err){
-           toast(err.response.data.erro)
+           toast(err.response.data)
         }
     }
 
@@ -45,13 +48,16 @@ export default function Pagamento(usuario){
 
                     <div className='card_input'>
                         <label>CPF</label>
-                        <input type='text' value={cpf} onChange={e => setCpf(e.target.value)} placeholder='ex.: 000.000.000-00'></input>
+                        <input type='text' value={cpf} onChange={e => setCpf(e.target.value)}></input>
                     </div>
 
                     <div className='card_input'>
-                    
                         <label>Email</label>
-                        <input type='email' value={email} onChange={e => setEmail(e.target.value)} placeholder='ex.: maria@gmail.com'></input>
+                        <input type='email' value={email} onChange={e => setEmail(e.target.value)}></input>
+                    </div>
+                    <div className='card-input'>
+                        <label>Data</label>
+                        <input type='date' value={data} onChange={e => setData(e.target.value)}></input>
                     </div>
                     <div className='fx_seletor'>
                         <select className='seletor' value={valor} onChange={e => setValor(e.target.value)}>

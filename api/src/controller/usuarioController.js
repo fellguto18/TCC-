@@ -59,10 +59,8 @@ server.post('/usuario/login', async (req,resp) => {
 
 server.post('/usuario/doacao', async (req,resp) => {
     try{
-        const {projeto, usuario, doacao, data } = req.body;
-        const resposta = await realizarDoacao(usuario, projeto, doacao, data);
-        if(!usuario)
-            throw new Error('Faça seu Login!');
+        const {projeto, nome, email, cpf, doacao, data } = req.body;
+        const resposta = await realizarDoacao(nome, email, cpf, projeto, doacao, data);
         if(!projeto)
             throw new Error('Selecione um Projeto!');
         if(!doacao)

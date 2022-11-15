@@ -3,11 +3,11 @@ import QRCode from "qrcode"
 import { useEffect, useState } from 'react'
 
 
-export default function AAA(projetoId, usuario, valor, dia) {
+export default function AAA(projetoId, nome, cpf, email, valor, dia) {
     const [src, setSrc] = useState('');
 
     useEffect(() => {
-    QRCode.toDataURL(`http://localhost:3000/projeto/pagamentorealizado?projeto=${projetoId}&qrcode?nome=${usuario.nome}&cpf=${usuario.cpf}&email=${usuario.email}&data=${dia}&valor=${valor}`).then((setSrc));
+    QRCode.toDataURL(`http://localhost:3000/projeto/pagamentorealizado?projeto=${projetoId}&qrcode?nome=${nome}&cpf=${cpf}&email=${email}&data=${dia}&valor=${valor}`).then((setSrc));
     }, []);
 
     return (
