@@ -22,8 +22,8 @@ export default function LandingPage(){
                 <div className='landing-page-text'><p className='fff'>Os projetos são diretamente para pessoas necessitadas, para ajudá-las.</p></div>
             </section>
 
-            <section className='landing-page-f3'>
-                <h2>Projetos ativos</h2>
+            <section className='landing-page-f3 flex fd-column jc-center align-itens-center'>
+                <h2 className='font-k2d-semibold margin-top-1'>Projetos ativos</h2>
                 <div>
                     <Carousel/>
                 </div>

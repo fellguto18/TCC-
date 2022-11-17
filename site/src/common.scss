@@ -12,12 +12,25 @@
     src: url(../public/assets/fonts/mukta/Mukta-Regular.ttf);
 }
 
+@font-face {
+    font-family: 'k2d-semibold' ;
+    src: url(../public/assets/fonts/k2d/K2D-SemiBold.ttf);
+}
+
 html{
     scroll-behavior: smooth
 }
 
+.font-k2d-semibold{
+    font-family: 'k2d-semibold';
+}
+
 .font-size-0-7em{
     font-size: 0.7em;
+}
+
+.margin-top-1{
+    margin-top: 1em;
 }
 
 .fff{

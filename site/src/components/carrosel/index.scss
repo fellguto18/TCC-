@@ -20,7 +20,7 @@
 
 .image img{
     width: 100%;
-    height: 90%;
+    height: 80%;
     border-radius: 12px;
     pointer-events: none;
 }
@@ -28,4 +28,12 @@
 .carousel{
     cursor: grab;
     overflow: hidden;
+}
+
+.botao{
+    border-radius: 20px;
+    color: #fff;
+    width: 30vh;
+    height: 6vh;
+    margin-top: 3vh;
 }

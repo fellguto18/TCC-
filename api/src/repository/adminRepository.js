@@ -145,7 +145,7 @@ export async function nossosProjetos(){
     const comando = 
     `select id_projeto   id,
             nm_projeto   nome,
-            img_projeto
+            img_projeto  imagem
         from tb_projeto`
     const resp = await con.query(comando);
     return resp[0]
