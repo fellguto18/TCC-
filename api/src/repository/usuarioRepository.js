@@ -3,9 +3,9 @@ import { con } from './connection.js';
 
 export async function cadastrarUsuario(usuario){
     const comando = 
-        `insert into tb_usuario (nm_usuario,ds_cpf, ds_email, ds_senha,ds_confirmar )
-            values (?, ?, ?, ?, ? )`
-    const [resposta] = await con.query(comando, [usuario.nome, usuario.cpf,usuario.email, usuario.senha,usuario.confirmar ]);
+        `insert into tb_usuario (nm_usuario,ds_cpf, ds_email, ds_senha)
+            values (?, ?, ?, ? )`
+    const [resposta] = await con.query(comando, [usuario.nome, usuario.cpf,usuario.email, usuario.senha]);
     usuario.id = resposta.insertId;
 
     return usuario;
@@ -32,7 +32,7 @@ export async function realizarDoacao(usuario, projeto, doacao, data){
     const comando = 
         `insert into tb_doacao(id_usuario, id_projeto, vl_doacao, dt_doacao)
             values(?,?,?,?)`
-    const [resposta] = await con.query(comando, [usuario, projeto, doacao, data])
+    const [resposta] = await con.query(comando, usuario, projeto, doacao, data)
     let id = resposta.insertId;
     return id;
 }

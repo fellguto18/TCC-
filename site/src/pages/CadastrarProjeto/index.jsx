@@ -9,8 +9,8 @@ import '../../common.scss'
 //componentes
 import { toast } from 'react-toastify';
 
-import { buscarImagem, cadastrarProjeto, enviarImagemProjeto, alterarProjeto } from "../../api/projetoApi";
-import { useNavigate, Link } from 'react-router-dom';
+import { buscarImagem, cadastrarProjeto, enviarImagemProjeto, alterarProjeto, listarProjetoPorID } from "../../api/projetoApi";
+import { useNavigate, Link, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 
 export default function CadastrarProjeto(){
@@ -22,12 +22,28 @@ export default function CadastrarProjeto(){
     },[])    
 
     const navigate = useNavigate();
+    const { idParam } = useParams();
 
     const [nome, setNome] = useState('');
     const [descricao, setDescricao] = useState('');
     const [meta, setMeta] = useState('');
     const [imagem, setImagem] = useState();
     const [id, setId] = useState(0);
+
+    useEffect(() => {
+        if(!idParam) {
+            carregarProjeto();
+        }
+    }, [])
+
+    async function carregarProjeto() {
+        const resposta = await listarProjetoPorID(idParam);
+        setNome(resposta.nome);
+        setDescricao(resposta.descricao);
+        setMeta(resposta.meta);
+        setId(resposta.id);
+      //  setImagem(resposta.imagem)
+    }
 
     async function salvarClick(){
         try {
@@ -45,7 +61,9 @@ export default function CadastrarProjeto(){
           }
           else{
             await alterarProjeto(id, nome, descricao, Number(meta), usuario);
-            await enviarImagemProjeto(id, imagem);
+
+            if (typeof(imagem == 'object'))
+                await enviarImagemProjeto(id, imagem);
             toast('🚀 Projeto alterado com sucesso!')
           }
 

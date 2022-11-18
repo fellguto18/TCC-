@@ -13,4 +13,14 @@ update tb_projeto
     where id_projeto = 1;
     
  alter table tb_usuario add ds_confirmar varchar(20) after ds_senha;   
-    
+
+ select nm_projeto, 
+	   nm_usuario,
+       vl_doacao,
+       dt_doacao
+from tb_doacao
+inner join tb_usuario on tb_doacao.id_usuario = tb_usuario.id_usuario
+inner join tb_projeto on tb_doacao.id_projeto = tb_projeto.id_projeto;
+
+insert into tb_doacao(id_usuario, id_projeto, vl_doacao, dt_doacao)
+	values(1, 1, 50, '2022-11-18');

@@ -22,9 +22,6 @@ server.post('/usuario/cadastro', async (req, resp) => {
         if(!usuarioParaInserir.senha){
             throw new Error('Senha é obrigatória');
         }
-        if(!usuarioParaInserir.confirmar){
-            throw new Error('Confirmar a senha é obrigatório!')
-        }
         
         const usuarioInserido = await cadastrarUsuario(usuarioParaInserir);
         resp.send(usuarioInserido);
@@ -59,14 +56,17 @@ server.post('/usuario/login', async (req,resp) => {
 
 server.post('/usuario/doacao', async (req,resp) => {
     try{
-        const {projeto, nome, email, cpf, doacao, data } = req.body;
-        const resposta = await realizarDoacao(nome, email, cpf, projeto, doacao, data);
+        const {projeto, usuario, doacao, data} = req.body;
+        const resposta = await realizarDoacao(usuario, projeto, doacao, data);
+        if(!usuario)
+            throw new Error('Faça seu login!')
         if(!projeto)
             throw new Error('Selecione um Projeto!');
         if(!doacao)
             throw new Error('Selecione um valor a ser doado!');
         if(!data)
             throw new Error('Coloque a data da doação!');
+
         
         resp.send({id:resposta})
     }

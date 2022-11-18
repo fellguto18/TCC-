@@ -42,6 +42,10 @@ export default function Index(){
         })          
     }
 
+    function editarProjeto(id){
+        navigate(`/admin/alterar/${id}`)
+    }
+
     function abrirDetalhes(id){
         navigate(`/projetoadm/${id}`);
        }
@@ -95,7 +99,7 @@ export default function Index(){
 
                                                 <img src='/assets/images/lixeira.svg' alt='remover' onClick={() => removerProjetoClick(item.id, item.nome)} />
                                                 
-                                                <img src='/assets/images/editar.svg' alt='editar' />
+                                                <img src='/assets/images/editar.svg' alt='editar' onClick={() => editarProjeto(item.id)}  />
                                                 
                                             </div>
                                             <div>
