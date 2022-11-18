@@ -79,8 +79,8 @@ server.post('/usuario/doacao', async (req,resp) => {
 
 
 //enviar-email-recuperar-senha
-server.post('/enviar-email', async (req, resp) => {
-    
+server.post('/enviar-email', async (req, resp) => { 
+
     let data = req.body;
     const transport = nodemailer.createTransport({
     host: process.env.HOST,
@@ -89,6 +89,7 @@ server.post('/enviar-email', async (req, resp) => {
     auth:{
         user: process.env.EMAIL,
         pass: process.env.SENHA
+    
     }
     })
 
