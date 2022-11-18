@@ -1,44 +1,59 @@
 .page-esqueceusenha {
-    width: 1462px;
-    height: 737px;
-    margin: 10vh 10vh;
+    width: auto;
+    height: 68em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 
     .logo-1{
         width: 7em;
         height: 5em;
-        margin-left: -3em;
+        margin-left: -73em;
         display: flex;
         justify-self: start;
     }
 
     p {
-        color: white;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        font-size: medium;
+        margin-bottom: 5em;
+        margin-left: 2em;
+        margin-right: 2em;
     }
 
     .aaa {
+        background-color: white;
         display: flex;
+        align-items: center;
         flex-direction: column;
+        width: 25em;
+        height: 30em;
+        border-radius: 18px;
     }
 
     .texto {
-        width: 300px;
-        border-radius: 10px;
-        border-bottom: 1px solid #4889EA;
-        padding-left: 25px;
-        outline: none;
+
+        align-self: start;
     }
 
     .div-botao {
         display: flex;
-        margin-left: 1em;
+        flex-direction: column;
+        color: #080405;
+        justify-content: space-between;
+        height: 9em;
+        margin-top: 4em;
+
     }
 
     .botao-1 {
         border-radius: 10px;
         height: 3.5m;
         width: 5.5em;
-        margin-top: 1em;
-        margin-left: 1em;
+        margin-bottom: 1em;
+        margin-left: 1.5em;
+        color: #4889EA;
     }
 
     .botao-2 {
@@ -46,5 +61,21 @@
         border-radius: 10px;
         height: 3.5m;
         width: 5.5em;
+    }
+
+    .botau{
+        border-radius: 10px;
+    }
+
+    .emei{
+        margin-bottom: 20px;
+    }
+    .botoun{
+        color: #ffffff;
+        border-radius: 10px;
+        height: 3.5m;
+        width: 5.5em;
+        margin-top: em;
+        margin-left: 1em;
     }
 }
