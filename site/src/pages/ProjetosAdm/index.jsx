@@ -2,8 +2,10 @@ import './style.scss'
 import '../../common.scss'
 import storage from 'local-storage';
 
+import { toast } from 'react-toastify'
+import { confirmAlert } from 'react-confirm-alert';
 import { useState } from 'react';
-import { listarProjeto } from '../../api/projetoApi';
+import { listarProjeto, removerProjeto } from '../../api/projetoApi';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -17,6 +19,27 @@ export default function Index(){
     async function carregarTodosProjetos() {
         const resp = await listarProjeto();
         setProjetos(resp);
+    }
+
+    async function removerProjetoClick(id, nome) {
+
+        confirmAlert({
+            title: 'Remover o projeto',
+            message: `Deseja remover o projeto ${nome}?`,
+            buttons: [
+                {
+                    label: 'Sim',
+                    onClick: async () => {
+                        const resposta = await removerProjeto(id, nome);
+                        carregarTodosProjetos();
+                        toast('Projeto removido🗑️')
+                    }
+                },
+                {
+                    label: 'Não'
+                }
+            ]
+        })          
     }
 
     function abrirDetalhes(id){
@@ -66,19 +89,19 @@ export default function Index(){
 
                             {projetos.map(item => 
 
-                                    <div className='comp-card-adm' data-aos='fade-up'  onClick={() => abrirDetalhes(item.id)}>
+                                    <div className='comp-card-adm' data-aos='fade-up' key={item.id} >
                                         <div className='card-adm'>
                                             <div className='acoes'>
 
-                                                <img src='/assets/images/icon-editar.svg' alt='editar' />
+                                                <img src='/assets/images/lixeira.svg' alt='remover' onClick={() => removerProjetoClick(item.id, item.nome)} />
                                                 
-                                                <img src='/assets/images/icon-remover.svg' alt='remover' />
+                                                <img src='/assets/images/editar.svg' alt='editar' />
                                                 
                                             </div>
                                             <div>
-                                                <div className='sigla-adm'>{item.nome.substr(0,1)}</div>
+                                                <div className='sigla-adm'  onClick={() => abrirDetalhes(item.id)}>{item.nome.substr(0,1)} </div>
                                                 <div className='projeto-adm'>{item.nome} </div>
-                                                <div className='lancamento'>Maio/2002</div>
+                                                <div className='meta'>{item.meta}</div>
                                             </div>
                                         </div>
                                      </div>

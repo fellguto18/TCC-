@@ -57,7 +57,7 @@ server.delete('/admin/projeto/:id', async (req, resp) => {
         const resposta = await removerProjeto(id);
 
         if (resposta != 1)
-            throw new Error('projeto não pode ser removido')
+            throw new Error('Projeto não pode ser removido')
         resp.status(204).send();
     } catch (err) {
         resp.status(400).send({

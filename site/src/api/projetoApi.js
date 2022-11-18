@@ -21,6 +21,10 @@ export async function alterarProjeto(id, nome, descricao, meta){
     return resposta.data;
 }
 
+export async function removerProjeto(id){
+    const resposta = await api.delete(`/admin/projeto/${id}`);
+    return resposta.status;
+}
 
 export async function enviarImagemProjeto(id, imagem){
     const formData = new FormData();

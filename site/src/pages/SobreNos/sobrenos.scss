@@ -61,6 +61,11 @@
         height: 9vh;
     }
 
+    .botao:hover{
+        transform: scale(1.01,1.01);
+        color: #ee4d4d;
+    }
+
     h1{
         font-family: 'kanit-semibold';
     }
