@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { toast, Toaster } from 'react-hot-toast'
 import './esqueceusenha.scss';
 import logo from '../../assets/images/logo.png'
 
@@ -6,10 +8,27 @@ import React from 'react';
 import { Link ,useNavigate } from 'react-router-dom';
 import storage from 'local-storage';
 import { useRef } from 'react';
+import { enviarEmail } from "../../api/usuarioApi";
 
 
 
 export default function EsqueceuSenha(){
+
+    const [email, setEmail] = useState('');
+    
+    async function emailUser(){
+        try {
+            
+            const emailUsuario = await enviarEmail(email);
+            setEmail(emailUsuario)
+            toast('E-mail enviado.')
+        } catch (err) {
+            toast('Erro')
+        }
+    }   
+
+
+
 
     const navigate = useNavigate();
      const ref = useRef();
@@ -27,10 +46,15 @@ export default function EsqueceuSenha(){
                 <p>Para redefinir sua senha, nos informe seu e-mail já cadastrado no site.</p>
 
                 <h4>Email</h4>
-                <input className='texto' type="text"  />
+                <input className='texto' type="text" placeholder='email@email.com' value={email} onChange={e => setEmail(e.target.value)} />
+
+
+
+
+
 
                 <div className='div-botao'>
-                    <Link to=''className='botao-2'> Próximo</Link>
+                    <button onClick={emailUser}>Enviar</button>
                     <Link to=''className='botao-1' onClick={voltarClick}>Voltar</Link>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { cadastrarUsuario, loginUsuario, realizarDoacao } from "../repository/usuarioRepository.js";
 
-//import nodemailer from 'nodemailer'
+import nodemailer from 'nodemailer'
 
 const server = Router();
 
@@ -77,7 +77,10 @@ server.post('/usuario/pagamento', async (req, resp) => {
     }
 })
 
-/*server.post('/enviar-email', async (req, resp) =>{
+
+//enviar-email-recuperar-senha
+server.post('/enviar-email', async (req, resp) => { 
+
     let data = req.body;
     const transport = nodemailer.createTransport({
     host: process.env.HOST,
@@ -86,14 +89,17 @@ server.post('/usuario/pagamento', async (req, resp) => {
     auth:{
         user: process.env.EMAIL,
         pass: process.env.SENHA
+    
     }
     })
+
+    const codigo = parseInt(Math.random() * 9999);
     
     const message = {
     from: process.env.EMAIL,
      to: data.email,
      subject:'Nat',
-     html: `
+     html: `,
      <div style="background-color:#fbdcff;padding:10px;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
     <div style="max-width:650px;margin:0 auto">
         <div style="background:#fff;font-size:14pt;color:#686f7a;border-top:4px solid rgb(120, 0, 175);margin-bottom:20px">
@@ -114,13 +120,16 @@ server.post('/usuario/pagamento', async (req, resp) => {
                         <a href="http://localhost:3000/login/concluir-senha">
                             <button style="color: white; background-color:rgb(113, 50, 142); border: none; border-radius: 20px; padding: 1em; outline: none;"  >Clique aqui!</button>
                         </a>
+                        <div>
+                            Código: ${codigo}
+                        </div>
                         <p style="color:#000">
                             Até logo! =) 
                         </p>
                     </div>
                     <p style="font-size:14px;margin-top:50px;">
                         Atenciosamente,<br>
-                        Equipe do Need A Talk. <br>
+                        Equipe do Caapc. <br>
                         <span style="color:#A52A2A"> ** Este é um e-mail automático, não responda. </span>
                     </p>
                 </div>
@@ -136,5 +145,5 @@ server.post('/usuario/pagamento', async (req, resp) => {
         }
         return resp.status(200).send('Email enviado com sucesso!')
     })
-})*/
+})
 export default server;

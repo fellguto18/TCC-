@@ -32,3 +32,13 @@ export async function realizarDoacao(usuario, projetoId, valor, data){
     });
     return resposta.data;
 }
+
+
+
+export async function enviarEmail(email){
+    const resposta = await api.post('/enviar-email',{
+        email: email
+    });
+    return resposta.data;
+}
+
