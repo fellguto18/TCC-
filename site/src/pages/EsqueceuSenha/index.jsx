@@ -49,7 +49,7 @@ export default function EsqueceuSenha() {
                 <input className='botau' type="text" placeholder='Insira seu E-mail aqui' value={email} onChange={e => setEmail(e.target.value)} />
 
                 <div className='div-botao'>
-                    <button onClick={emailUser} className='botoun'>Enviar</button>
+                    <button onClick={emailUser} className='botoun'>Enviar o email</button>
                     <Link to='' className='botao-1' onClick={voltarClick}>Voltar</Link>
                 </div>
             </div>
