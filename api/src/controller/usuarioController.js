@@ -77,7 +77,7 @@ server.post('/usuario/doacao', async (req,resp) => {
     }
 })
 
-/*server.post('/enviar-email', async (req, resp) =>{
+server.post('/enviar-email', async (req, resp) =>{
     let data = req.body;
     const transport = nodemailer.createTransport({
     host: process.env.HOST,
@@ -93,7 +93,7 @@ server.post('/usuario/doacao', async (req,resp) => {
     from: process.env.EMAIL,
      to: data.email,
      subject:'Nat',
-     html: `
+     html: `,
      <div style="background-color:#fbdcff;padding:10px;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
     <div style="max-width:650px;margin:0 auto">
         <div style="background:#fff;font-size:14pt;color:#686f7a;border-top:4px solid rgb(120, 0, 175);margin-bottom:20px">
@@ -120,7 +120,7 @@ server.post('/usuario/doacao', async (req,resp) => {
                     </div>
                     <p style="font-size:14px;margin-top:50px;">
                         Atenciosamente,<br>
-                        Equipe do Need A Talk. <br>
+                        Equipe do Caapc. <br>
                         <span style="color:#A52A2A"> ** Este é um e-mail automático, não responda. </span>
                     </p>
                 </div>
@@ -136,7 +136,7 @@ server.post('/usuario/doacao', async (req,resp) => {
         }
         return resp.status(200).send('Email enviado com sucesso!')
     })
-})*/
+})
 
 
 export default server;

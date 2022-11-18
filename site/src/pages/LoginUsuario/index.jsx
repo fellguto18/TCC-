@@ -18,12 +18,8 @@ export default function LoginUsuario(){
      const navigate = useNavigate();
      const ref = useRef();
 
-     useEffect(() => {
-          if(storage('usuario-logado')) {
-               navigate('/');
-          }
-     }, [])
      
+
      async function entrarClick(){
           ref.current.continuousStart();
           setCarregando(true);    
