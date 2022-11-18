@@ -19,8 +19,8 @@ function CadastroAdm(){
      const ref = useRef();
 
      useEffect(() => {
-          if(storage('usuario-logado')) {
-               navigate('/sidemenu');
+          if(storage('adm-logado')) {
+               navigate('/admin/menu');
           }
      }, [])
      
@@ -30,11 +30,11 @@ function CadastroAdm(){
 
           try {
           const r = await login(email, senha);
-          storage('usuario-logado', r)
+          storage('adm-logado', r)
          
 
           setTimeout(() => {
-               navigate('/sidemenu');
+               navigate('/admin/menu');
           }, 3000);
 
 
@@ -53,7 +53,7 @@ function CadastroAdm(){
           <LoadingBar color='#4889ea' ref={ref} />
 
           <img className='logo' src={logo} />
-          <div className='cadastrar-adm' >                         
+          <div className='cadastrar-adm' data-aos='fade-up' >                         
                <div className='login'>             
                     <h1 className='bem-vindo'>Seja bem-vindo!</h1> 
                     <div className='cx-login'>   

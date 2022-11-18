@@ -6,8 +6,6 @@ import './index.scss'
 import '../../common.scss'
 
 //componentes
-import SideMenu from '../../components/sideMenu';
-
 import { toast } from 'react-toastify';
 
 import { buscarImagem, cadastrarProjeto, enviarImagemProjeto, alterarProjeto } from "../../api/projetoApi";
@@ -17,7 +15,7 @@ import { useEffect } from 'react';
 export default function CadastrarProjeto(){
 
     useEffect(() => {
-        if(!storage('usuario-logado')){
+        if(!storage('adm-logado')){
             navigate('/admin/login');
         }
     },[])    
@@ -35,7 +33,7 @@ export default function CadastrarProjeto(){
             if(!imagem)
                throw new Error('Escolha a imagem do projeto.')    
 
-          const usuario = storage('usuario-logado').id;
+          const usuario = storage('adm-logado').id;
           
           if(id === 0) {
             const novoProjeto = await cadastrarProjeto(nome, descricao, Number(meta), usuario);
@@ -59,7 +57,7 @@ export default function CadastrarProjeto(){
     }
 
     function sairClick(){
-        storage.remove('usuario-logado');
+        storage.remove('adm-logado');
         navigate('/admin/login');
     }
 

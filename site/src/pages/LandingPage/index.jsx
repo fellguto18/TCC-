@@ -23,7 +23,7 @@ export default function LandingPage(){
             </section>
 
             <section className='landing-page-f3 flex fd-column jc-center align-itens-center'>
-                <h2 className='font-k2d-semibold margin-top-1'>Projetos ativos</h2>
+                <h2 className='font-k2d-semibold margin-top-3'>Projetos ativos</h2>
                 <div>
                     <Carousel/>
                 </div>

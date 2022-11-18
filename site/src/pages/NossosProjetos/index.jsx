@@ -34,11 +34,11 @@ export default function NossosProjetos(){
             <main className='flex fd-column jc-center align-itens-center '>
                 <div className='box flex fd-column jc-center align-itens-center'>
                     <div className='texto'>
-                        <h3>Conheça nossos projetos:</h3>    
+                        <h3 className='text-nossos-projetos'>Conheça nossos projetos:</h3>    
                     </div>   
                     <div className='card-container jc-center'>
                         {projetos.map(item => 
-                            <div className='card' onClick={() => abrirDetalhes(item.id)}>
+                            <div className='card' data-aos='fade-up' onClick={() => abrirDetalhes(item.id)}>
                                 <div>
                                         <div className='sigla'>{item.nome.substr(0,1)}</div>
                                         <div className='projeto'>{item.nome} </div>

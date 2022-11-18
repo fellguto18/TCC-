@@ -14,17 +14,13 @@ import NossosProjetos from '../pages/NossosProjetos';
 import DoacaoRealizada from '../pages/ConfirmacaoDoacao';
 import Grafico from '../pages/Grafico';
 import SenhaAltSucesso from '../pages/SenhaSucesso';
-
+import SejaBemVindoAdm from '../pages/SejaBemVindoAdm';
+import ProjetosAdm from '../pages/ProjetosAdm';
 import Pagamento from '../pages/Pagamento';
 
-import MenuAdmin from '../components/menuAdmin'
-//import Laraputa from '../pages/9.eviaremail';
 
 //teste
 import DetalhesProjeto from '../pages/DetalhesProjeto';
-import SideMenu from '../components/sideMenu';
-import Footer from '../components/footer';
-import Carousel from '../components/carrosel';
 
 export default function Rotas(){
 return(
@@ -32,6 +28,8 @@ return(
         <Routes>
             <Route path='/' element = {<LandingPage />} />
             <Route path="/admin/login"  element={<LoginAdm/>}/>
+            <Route path='/admin/menu' element={<SejaBemVindoAdm/>}/>
+            <Route path='/admin/projetos' element={<ProjetosAdm/>} />
             <Route path="/admin/cadastrar"  element={<CadastrarProjeto/>} />
             <Route path="/admin/doadores" element={<PesquisarDoadores/>}/>
             <Route path="/usuario/cadastrar"  element={<CriarConta/>} />
@@ -46,15 +44,7 @@ return(
             <Route path='/teste'  element={<AAA/>}/>
             <Route path='/doacao/realizada' element={<DoacaoRealizada/>}/>
             <Route path='/grafico' element={<Grafico/>}/>
-
-
             <Route path='/senha/sucesso' element={<SenhaAltSucesso/>}/>
-
-            <Route path='/sidemenu' element={<SideMenu/>} />
-            <Route path='/footer' element={<Footer/>} />
-            <Route path='/carousel' element={<Carousel/>} />
-
-
         </Routes>
     </BrowserRouter>
 )
