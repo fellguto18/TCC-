@@ -18,6 +18,8 @@ export default function DetalhesProjeto(){
 
     const { idParam } = useParams();
 
+    
+
     useEffect(() => {
         carregarProjeto();
     }, []);
@@ -26,6 +28,8 @@ export default function DetalhesProjeto(){
         const resposta = await listarProjetoPorID(idParam);
         setProjeto(resposta);
     }
+
+    
 
     return(
         <>

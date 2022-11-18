@@ -54,24 +54,24 @@ server.post('/usuario/login', async (req,resp) => {
 
 //Fazer doação
 
-server.post('/usuario/doacao', async (req,resp) => {
+server.post('/usuario/pagamento', async (req, resp) => {
     try{
-        const {projeto, usuario, doacao, data} = req.body;
-        const resposta = await realizarDoacao(usuario, projeto, doacao, data);
+        const {usuario, projeto, doacao, data} = req.body;
+        const x = await realizarDoacao(usuario, projeto, doacao, data);
         if(!usuario)
-            throw new Error('Faça seu login!')
+            throw new Error('Faça seu login!');
         if(!projeto)
-            throw new Error('Selecione um Projeto!');
+            throw new Error('Selecione o projeto!');
         if(!doacao)
-            throw new Error('Selecione um valor a ser doado!');
+            throw new Error('Selecione o valor!');
         if(!data)
-            throw new Error('Coloque a data da doação!');
-
-        
-        resp.send({id:resposta})
+            throw new Error('Selecione a data!');
+        resp.send({
+            insertedId: x
+        });
     }
     catch(err){
-        resp.sendStatus(401).send({
+        resp.send({
             erro:err.message
         })
     }
@@ -146,6 +146,4 @@ server.post('/enviar-email', async (req, resp) => {
         return resp.status(200).send('Email enviado com sucesso!')
     })
 })
-
-
 export default server;

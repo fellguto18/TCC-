@@ -12,20 +12,19 @@ export async function login(email, senha) {
 
     return r.data;
 }
-export async function cadastrarUsuario(nome,cpf,email,senha,confirmar){
+export async function cadastrarUsuario(nome,cpf,email,senha){
     const resposta= await api.post('/usuario/cadastro',{
         nome:nome,
         cpf:cpf,
         email:email,
         senha:senha,
-        confirmar:confirmar
     });
 
     return resposta.data;
 }
 
 export async function realizarDoacao(usuario, projetoId, valor, data){
-    const resposta = await api.post('/usuario/doacao',{
+    const resposta = await api.post('/usuario/pagamento',{
         usuario:usuario,
         projeto:projetoId,
         doacao:valor,
