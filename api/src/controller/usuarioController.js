@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { cadastrarUsuario, loginUsuario, realizarDoacao } from "../repository/usuarioRepository.js";
 
-//import nodemailer from 'nodemailer'
+import nodemailer from 'nodemailer'
 
 const server = Router();
 
@@ -77,7 +77,10 @@ server.post('/usuario/doacao', async (req,resp) => {
     }
 })
 
-server.post('/enviar-email', async (req, resp) =>{
+
+//enviar-email-recuperar-senha
+server.post('/enviar-email', async (req, resp) => {
+    
     let data = req.body;
     const transport = nodemailer.createTransport({
     host: process.env.HOST,
@@ -88,6 +91,8 @@ server.post('/enviar-email', async (req, resp) =>{
         pass: process.env.SENHA
     }
     })
+
+    const codigo = parseInt(Math.random() * 9999);
     
     const message = {
     from: process.env.EMAIL,
@@ -114,6 +119,9 @@ server.post('/enviar-email', async (req, resp) =>{
                         <a href="http://localhost:3000/login/concluir-senha">
                             <button style="color: white; background-color:rgb(113, 50, 142); border: none; border-radius: 20px; padding: 1em; outline: none;"  >Clique aqui!</button>
                         </a>
+                        <div>
+                            Código: ${codigo}
+                        </div>
                         <p style="color:#000">
                             Até logo! =) 
                         </p>
