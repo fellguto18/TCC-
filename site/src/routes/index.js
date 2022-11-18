@@ -33,6 +33,7 @@ return(
             <Route path='/admin/projetos' element={<ProjetosAdm/>} />
             <Route path='/projetoadm/:idParam' element={<DetalhesProjetoAdm/>} />
             <Route path="/admin/cadastrar"  element={<CadastrarProjeto/>} />
+            <Route path="/admin/alterar/:idParam"  element={<CadastrarProjeto/>} />
             <Route path="/admin/doadores" element={<PesquisarDoadores/>}/>
             <Route path="/usuario/cadastrar"  element={<CriarConta/>} />
             <Route path='/cadastro/agradecimento' element={<CadastroOk/>}/>
