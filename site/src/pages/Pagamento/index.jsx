@@ -1,6 +1,5 @@
-import { useEffect } from 'react';
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './index.scss'
 
 import {realizarDoacao} from '../../api/usuarioApi.js';
@@ -20,18 +19,17 @@ export default function Pagamento(usuario){
     async function Click(){
         try{
             const r = await realizarDoacao(nome, cpf, email, valor, data);
-            if(nome == undefined)
+            if(!nome)
                 throw new Error('Nome é obrigatório!')
-            if(email == undefined)
+            if(!email)
                 throw new Error('Email é obrigatório!')
-            if(cpf == undefined)
+            if(!cpf)
                 throw new Error('CPF é obrigatório!')
-            if(valor == undefined)
+            if(!valor)
                 throw new Error('Selecione um valor!')
-            if(data == undefined)
+            if(!data)
                 throw new Error('Data é obrigatória!')
             navigate('/teste')
-            toast('🚀  Doação efetuada com sucesso!')
         }catch(err){
            toast(err.response.data)
         }

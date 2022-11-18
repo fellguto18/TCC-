@@ -20,7 +20,7 @@ export async function loginUsuario(email, senha){
                     nm_usuario        nome
         from tb_usuario
         where ds_email                = ?
-        and ds_senha                  = ?`
+        and ds_senha                  = ?`;
 
     const resp = await con.query(comando, [email,senha]);
     const linhas = resp[0];
@@ -29,10 +29,10 @@ export async function loginUsuario(email, senha){
 
 //Fazer doação
 export async function realizarDoacao(usuario, projeto, doacao, data){
-    const comando = 
-        `insert into tb_doacao(id_usuario, id_projeto, vl_doacao, dt_doacao)
-            values(?,?,?,?)`
-    const [resposta] = await con.query(comando, usuario, projeto, doacao, data)
-    let id = resposta.insertId;
-    return id;
+    const comando = `
+        insert into tb_doacao(id_usuario, id_projeto, vl_doacao, dt_doacao)
+                       values(?, ?, ?, ?)
+    `;
+    const [result] = await con.query(comando, [usuario, projeto, doacao, data]);
+    return result.insertId;
 }
