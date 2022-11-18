@@ -29,9 +29,12 @@ export default function DetalhesProjeto(){
 
     return(
         <>
-            <main>
+            <main className='pagina-det-projeto'>
                 <NavBarComp/>
-                <DetalheProjeto projeto={projeto} />
+                <DetalheProjeto projeto={projeto}/>
+                <div className='box-button-d'>
+                  <button className='botao'>Faça a sua doação</button>
+                </div>
 
             </main>
         </>

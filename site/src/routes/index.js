@@ -16,6 +16,7 @@ import Grafico from '../pages/Grafico';
 import SenhaAltSucesso from '../pages/SenhaSucesso';
 import SejaBemVindoAdm from '../pages/SejaBemVindoAdm';
 import ProjetosAdm from '../pages/ProjetosAdm';
+import DetalhesProjetoAdm from '../pages/DetalhesProjetoAdm';
 import Pagamento from '../pages/Pagamento';
 
 
@@ -30,6 +31,7 @@ return(
             <Route path="/admin/login"  element={<LoginAdm/>}/>
             <Route path='/admin/menu' element={<SejaBemVindoAdm/>}/>
             <Route path='/admin/projetos' element={<ProjetosAdm/>} />
+            <Route path='/projetoadm/:idParam' element={<DetalhesProjetoAdm/>} />
             <Route path="/admin/cadastrar"  element={<CadastrarProjeto/>} />
             <Route path="/admin/doadores" element={<PesquisarDoadores/>}/>
             <Route path="/usuario/cadastrar"  element={<CriarConta/>} />

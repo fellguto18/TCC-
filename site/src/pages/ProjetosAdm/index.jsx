@@ -19,6 +19,10 @@ export default function Index(){
         setProjetos(resp);
     }
 
+    function abrirDetalhes(id){
+        navigate(`/projetoadm/${id}`);
+       }
+
     function sairClick(){
         storage.remove('adm-logado');
         navigate('/admin/login');
@@ -43,7 +47,7 @@ export default function Index(){
                             <img src="/assets/images/logo.svg" alt="Logo do site" className='logo' />
                             </div>
                             <div className='side-menu-links'>
-                                    <p className='fff'>Projetos</p>
+                                    <Link to='/admin/projetos'><p className='fff'>Projetos</p> </Link>
                                     <p className='fff'>Doadores</p>
                                     <p className='fff'>Estatísticas</p>
                                     <p onClick={sairClick} className='fff pointer'>Sair</p>
@@ -51,9 +55,9 @@ export default function Index(){
                     </aside>
                     <div className='menuzao'>
                             <div className="menu flex"> 
-                                <p> Projetos Criados</p>                        
+                                <Link to='/admin/projetos'><p className='animation-hover-menu'> Projetos Criados</p> </Link>                        
                                 <div className='line-adm'></div>
-                                <Link to='/admin/cadastrar'><p> Criar Projeto</p> </Link>
+                                <Link to='/admin/cadastrar'><p className='animation-hover-menu'> Criar Projeto</p> </Link>
                             </div>
 
                             <div>
@@ -62,7 +66,7 @@ export default function Index(){
 
                             {projetos.map(item => 
 
-                                    <div className='comp-card-adm'>
+                                    <div className='comp-card-adm' data-aos='fade-up'  onClick={() => abrirDetalhes(item.id)}>
                                         <div className='card-adm'>
                                             <div className='acoes'>
 

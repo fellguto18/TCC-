@@ -1,6 +1,7 @@
 import storage from 'local-storage';
 import { useState } from "react";
 
+
 //estilos
 import './index.scss'
 import '../../common.scss'
@@ -9,7 +10,7 @@ import '../../common.scss'
 import { toast } from 'react-toastify';
 
 import { buscarImagem, cadastrarProjeto, enviarImagemProjeto, alterarProjeto } from "../../api/projetoApi";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useEffect } from 'react';
 
 export default function CadastrarProjeto(){
@@ -91,26 +92,26 @@ export default function CadastrarProjeto(){
                        <img src="/assets/images/logo.svg" alt="Logo do site" className='logo' />
                        </div>
                        <div className='side-menu-links'>
-                             <p className='fff'>Projetos</p>
+                             <Link to='/admin/projetos'><p className='fff'>Projetos</p> </Link>
                              <p className='fff'>Doadores</p>
                              <p className='fff'>Estatísticas</p>
                              <p onClick={sairClick} className='fff pointer'>Sair</p>
                        </div>
                </aside>
                <div className='menuzao'>
-                    <div className="menu"> <p> Projetos Criados |</p> <p> Criar Projeto</p></div>
+                    <div className="menu">  <Link to='/admin/projetos'><p  className='animation-hover-menu'> Projetos Criados</p> </Link> <div className='line-adm'></div> <Link to='/admin/cadastrar'><p  className='animation-hover-menu'> Criar Projeto</p> </Link></div>
 
                     <div className="box-input">
                        <p>Nome do Projeto</p>
-                       <input type="text" className="input" value={nome} onChange={e => setNome(e.target.value)}/>
+                       <input type="text" className="input" data-aos='fade-up' value={nome} onChange={e => setNome(e.target.value)}/>
                     </div>
                     <div className="box-input">
                         <p>Descrição</p>
-                        <input type="text" className="input pointer"  value={descricao} onChange={e => setDescricao(e.target.value)} />
+                        <input type="text" className="input" data-aos='fade-up'  value={descricao} onChange={e => setDescricao(e.target.value)} />
                     </div>
                     <div className="box-input">
                         <p>Objetivos do projeto</p>
-                        <input type="number" className="input"  value={meta} onChange={e => setMeta(e.target.value)}/>
+                        <input type="number" className="input" data-aos='fade-up'  value={meta} onChange={e => setMeta(e.target.value)}/>
                     </div>
                </div>
                <div>

@@ -2,13 +2,23 @@ import './style.scss'
 import '../../common.scss'
 import storage from 'local-storage';
 
+import { listarProjetoPorID } from '../../api/projetoApi';
+import { useParams } from 'react-router-dom';
+import { useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
+//components
+import DetalheProjeto from '../../components/detalhesProjeto';
+
 export default function Index(){
 
     const navigate = useNavigate();
+
+    const [projeto, setProjeto] = useState({});
+
+    const { idParam } = useParams();
 
 
     useEffect(() => {
@@ -21,6 +31,15 @@ export default function Index(){
         storage.remove('adm-logado');
         navigate('/admin/login');
     }
+
+    async function carregarProjeto(){
+        const resposta = await listarProjetoPorID(idParam);
+        setProjeto(resposta);
+    }
+
+    useEffect(() => {
+        carregarProjeto();
+    }, []);
 
     return(
         <>
@@ -43,9 +62,9 @@ export default function Index(){
                                 <div className='line-adm'></div>
                                 <Link to='/admin/cadastrar'><p className='animation-hover-menu'> Criar Projeto</p> </Link>
                             </div>
-                            <div className='bem-vindo-adm'>
-                                <h1 data-aos='fade-down'>Seja bem vindo administrador!</h1>
-                            </div>
+                           <div>
+                                <DetalheProjeto projeto={projeto}/>
+                           </div>
                     </div>
              </div> 
            </main>
