@@ -31,7 +31,7 @@ export default function LoginUsuario(){
 
           setTimeout(() => {
                navigate('/');
-          }, 3000);
+          }, 300);
 
 
           }catch (err){

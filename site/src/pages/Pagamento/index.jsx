@@ -5,9 +5,10 @@ import './index.scss'
 import {realizarDoacao} from '../../api/usuarioApi.js';
 import { toast } from 'react-toastify';
 
+import a from '../../assets/images/a.png';
 
 
-export default function Pagamento(usuario){
+export default function Pagamento(){
     const[nome, setNome] = useState();
     const[cpf, setCpf] = useState();
     const[email, setEmail] = useState();
@@ -19,26 +20,39 @@ export default function Pagamento(usuario){
     async function Click(){
         try{
             const r = await realizarDoacao(nome, cpf, email, valor, data);
-            if(!nome)
+            if(!nome){
                 throw new Error('Nome é obrigatório!')
-            if(!email)
+            }
+            if(!email){
                 throw new Error('Email é obrigatório!')
-            if(!cpf)
+            }
+            if(!cpf){
                 throw new Error('CPF é obrigatório!')
-            if(!valor)
+            }
+            if(!valor){
                 throw new Error('Selecione um valor!')
-            if(!data)
+            }
+            if(!data){
                 throw new Error('Data é obrigatória!')
-            navigate('/teste')
+            }
+            
         }catch(err){
            toast(err.response.data)
         }
+    }
+
+    function Voltar(){
+        navigate('/')
     }
 
     return(
         <main className='page_pagamento'>
             <div className='pp_fundo'>
                 <div>
+                    <div className='botao_voltar'>
+                            <img src={a} onClick={Voltar}/>
+                            <p onClick={Voltar}>Voltar</p>  
+                    </div>
                     <div className='card_input'>
                         <label>Nome</label>
                         <input type='text' value={nome} onChange={e => setNome(e.target.value)}></input>
@@ -53,7 +67,7 @@ export default function Pagamento(usuario){
                         <label>Email</label>
                         <input type='email' value={email} onChange={e => setEmail(e.target.value)}></input>
                     </div>
-                    <div className='card-input'>
+                    <div className='card_input'>
                         <label>Data</label>
                         <input type='date' value={data} onChange={e => setData(e.target.value)}></input>
                     </div>
@@ -70,7 +84,7 @@ export default function Pagamento(usuario){
                 </div>
                     
 
-                <button onClick={Click}>Gerar QRCode</button>
+                <button onClick={Click}>Pagar</button>
                 
                 
             </div>

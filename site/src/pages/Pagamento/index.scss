@@ -3,10 +3,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+   
     label, option, button, p{
         font-family: 'mukta-regular';
+        font-size: 18px;
     }
+
     label{
         color: #4889EA;
     }
@@ -15,17 +17,18 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        
+       
         background-color: #fff;
         border-radius: 30px;
         margin-bottom: 10em;
         margin-top: 10em;
+
+        width: 25em;
+        height: auto;
         
         .card_input{
             display: flex;
             flex-direction: column;
-    
             margin: 10px 40px;
             input{
                 outline: none;
@@ -34,12 +37,35 @@
                 border-bottom: 1px solid #4889EA;
                 padding-left: 25px;
             }
-           
+        }
+        .botao_voltar{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 4.3em;
+
+            :hover{
+                cursor: pointer;
+            }
+            
+            p{
+                margin-left: 6px;
+                font-size: 15px;
+                margin-bottom: 35px;
+            }
+            img{
+                width: 10px;
+                height: 15px;
+                margin-left: 20px;        
+            }
         }
         button{
             width: 10em;
             height:2.5em;
             margin-bottom: 10px;
+            margin-top: 20px;
+            color: white;
+            border-radius: 30px;
         }
     }
     .fx_seletor{
@@ -57,12 +83,9 @@
         background-color: #e3e3e3;
         margin-left: 40px;
         border-radius: 10px;
-        padding: 0px 10px;
-        
+        padding: 0px 10px;        
         :hover{
             cursor: pointer;
         }
     }
-
-
 }

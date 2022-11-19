@@ -35,7 +35,7 @@ function CadastroAdm(){
 
           setTimeout(() => {
                navigate('/admin/menu');
-          }, 3000);
+          }, 300);
 
 
           }catch (err){

@@ -35,7 +35,7 @@ export default function CriarConta() {
         if (senha === confsenha) return { valido: true, texto: "" };
         else return { valido: false, texto: "Senha não confere!" };
       }
-      toast('🚀  cadastrado com sucesso!')
+      toast(`🚀 cadastrado com sucesso!`)
     } catch (err) {
       toast.error(err.response.data.erro);
     }
