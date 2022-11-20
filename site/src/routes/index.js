@@ -12,7 +12,7 @@ import AAA from '../pages/TesteQrCode';
 import SobreNos from '../pages/SobreNos';
 import NossosProjetos from '../pages/NossosProjetos';
 import DoacaoRealizada from '../pages/ConfirmacaoDoacao';
-import Grafico from '../pages/Grafico';
+import Grafico from '../pages/Estatistica'
 import SenhaAltSucesso from '../pages/SenhaSucesso';
 import SejaBemVindoAdm from '../pages/SejaBemVindoAdm';
 import ProjetosAdm from '../pages/ProjetosAdm';
@@ -46,7 +46,7 @@ return(
             <Route path='/projeto/:idParam' element={<DetalhesProjeto/>}/>
             <Route path='/teste'  element={<AAA/>}/>
             <Route path='/doacao/realizada' element={<DoacaoRealizada/>}/>
-            <Route path='/grafico' element={<Grafico/>}/>
+            <Route path='/grafico' element={<Grafico/>} />
             <Route path='/senha/sucesso' element={<SenhaAltSucesso/>}/>
         </Routes>
     </BrowserRouter>
