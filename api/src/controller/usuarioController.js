@@ -1,5 +1,5 @@
-import { Router } from "express";
-import { cadastrarUsuario, loginUsuario, realizarDoacao } from "../repository/usuarioRepository.js";
+import { application, Router } from "express";
+import { cadastrarUsuario, /*findAnUser,*/ loginUsuario, realizarDoacao } from "../repository/usuarioRepository.js";
 
 import nodemailer from 'nodemailer'
 
@@ -78,6 +78,17 @@ server.post('/usuario/pagamento', async (req, resp) => {
     }
 })
 
+/*server.get('usuario/encontrar/:cpf', (req,resp) => {
+    try{
+        const resposta = await findAnUser();
+        resp.send(resposta); 
+    }
+    catch(err){
+        resp.send({
+            erro:err.message
+        })
+    }
+})*/
 
 //enviar-email-recuperar-senha
 server.post('/enviar-email', async (req, resp) => { 
@@ -147,4 +158,8 @@ server.post('/enviar-email', async (req, resp) => {
         return resp.status(200).send('Email enviado com sucesso!')
     })
 })
+
+
+
+
 export default server;

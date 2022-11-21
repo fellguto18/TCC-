@@ -79,7 +79,7 @@ const data = [
 ];
 export default function Grafico() {
   return (
-      <ResponsiveContainer width="100%" aspect={3}>
+      <ResponsiveContainer className='grafico' width="100%" aspect={3}>
         <LineChart
           width={500}
           height={300}
