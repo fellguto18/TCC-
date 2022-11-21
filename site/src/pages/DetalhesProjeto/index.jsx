@@ -2,7 +2,7 @@ import '../../common.scss'
 import './index.scss'
 
 
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { listarProjetoPorID } from '../../api/projetoApi';
 import { useState } from 'react';
@@ -37,7 +37,7 @@ export default function DetalhesProjeto(){
                 <NavBarComp/>
                 <DetalheProjeto projeto={projeto}/>
                 <div className='box-button-d'>
-                  <button className='botao'>Faça a sua doação</button>
+                  <Link to='/usuario/doacao'><button className='botao'>Faça a sua doação</button></Link>
                 </div>
 
             </main>

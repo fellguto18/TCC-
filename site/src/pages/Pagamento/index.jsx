@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+
 import './index.scss'
+import { Link, useNavigate } from 'react-router-dom';
 
 import {realizarDoacao} from '../../api/usuarioApi.js';
 import { toast } from 'react-toastify';
@@ -84,7 +85,7 @@ export default function Pagamento(){
                 </div>
                     
 
-                <button onClick={Click}>Pagar</button>
+                <Link to='/doacao/realizada'onClick={Click}>Pagar</Link>
                 
                 
             </div>
