@@ -46,7 +46,7 @@ return(
             <Route path='/projeto/:idParam' element={<DetalhesProjeto/>}/>
             <Route path='/teste'  element={<AAA/>}/>
             <Route path='/doacao/realizada' element={<DoacaoRealizada/>}/>
-            <Route path='/grafico' element={<Grafico/>} />
+            <Route path='/admin/grafico' element={<Grafico/>} />
             <Route path='/senha/sucesso' element={<SenhaAltSucesso/>}/>
         </Routes>
     </BrowserRouter>

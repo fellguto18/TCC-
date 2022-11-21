@@ -31,7 +31,7 @@ export default function CadastrarProjeto(){
     const [id, setId] = useState(0);
 
     useEffect(() => {
-        if(!idParam) {
+        if(idParam) {
             carregarProjeto();
         }
     }, [])
@@ -42,13 +42,13 @@ export default function CadastrarProjeto(){
         setDescricao(resposta.descricao);
         setMeta(resposta.meta);
         setId(resposta.id);
-      //  setImagem(resposta.imagem)
+        setImagem(resposta.imagem);
     }
 
     async function salvarClick(){
         try {
             if(!imagem)
-               throw new Error('Escolha a imagem do projeto.')    
+               throw new Error('Escolha a imagem do projeto.');  
 
           const usuario = storage('adm-logado').id;
           
@@ -62,7 +62,7 @@ export default function CadastrarProjeto(){
           else{
             await alterarProjeto(id, nome, descricao, Number(meta), usuario);
 
-            if (typeof(imagem == 'object'))
+            if (typeof(imagem) == 'object')
                 await enviarImagemProjeto(id, imagem);
             toast('🚀 Projeto alterado com sucesso!')
           }
@@ -111,8 +111,8 @@ export default function CadastrarProjeto(){
                        </div>
                        <div className='side-menu-links'>
                              <Link to='/admin/projetos'><p className='fff'>Projetos</p> </Link>
-                             <p className='fff'>Doadores</p>
-                             <p className='fff'>Estatísticas</p>
+                             <Link to='/admin/doadores'><p className='fff'>Doadores</p> </Link>
+                             <Link to='/admin/grafico'><p className='fff'>Estatísticas</p> </Link>
                              <p onClick={sairClick} className='fff pointer'>Sair</p>
                        </div>
                </aside>

@@ -51,8 +51,8 @@ export default function Index(){
                             </div>
                             <div className='side-menu-links'>
                                     <Link to='/admin/projetos'><p className='fff'>Projetos</p> </Link>
-                                    <p className='fff'>Doadores</p>
-                                    <p className='fff'>Estatísticas</p>
+                                    <Link to='/admin/doadores'><p className='fff'>Doadores</p> </Link>
+                                    <Link to='/admin/grafico'><p className='fff'>Estatísticas</p> </Link>
                                     <p onClick={sairClick} className='fff pointer'>Sair</p>
                             </div>
                     </aside>
